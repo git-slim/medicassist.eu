@@ -1,0 +1,121 @@
+<f:argument name="image" type="object" optional="{true}" />
+<f:argument name="src" type="string" optional="{true}" />
+<f:argument name="treatIdAsReference" type="boolean" optional="{true}" />
+
+<f:argument name="maxWidth" type="integer" optional="{true}" />
+<f:argument name="maxHeight" type="integer" optional="{true}" />
+<f:argument name="minWidth" type="integer" optional="{true}" />
+<f:argument name="minHeight" type="integer" optional="{true}" />
+<f:argument name="width" type="integer" optional="{true}" />
+<f:argument name="height" type="integer" optional="{true}" />
+<f:argument name="crop" type="mixed" optional="{true}" />
+<f:argument name="cropVariant" type="string" optional="{true}" />
+
+<f:argument name="alt" type="string" optional="{true}" />
+<f:argument name="class" type="string" optional="{true}" />
+<f:argument name="id" type="string" optional="{true}" />
+<f:argument name="style" type="string" optional="{true}" />
+<f:argument name="data" type="array" optional="{true}" />
+<f:argument name="aria" type="array" optional="{true}" />
+
+<f:argument name="link" type="string" optional="{true}" />
+<f:argument name="linkClass" type="string" optional="{true}" />
+<f:argument name="linkAdditionalAttributes" type="array" optional="{true}" />
+
+<f:argument name="lightbox" type="boolean" optional="{true}" />
+<f:argument name="lightboxGroup" type="string" optional="{true}" />
+
+<f:argument name="enhanced" type="boolean" optional="{true}" />
+<f:argument name="objectFit" type="string" optional="{true}" />
+<f:argument name="breakpoints" type="string" optional="{true}" />
+<f:argument name="placeholder" type="mixed" optional="{true}" />
+
+<f:if condition="!{maxWidth} and !{maxHeight}">
+    <f:variable name="maxWidth">{settings.media.maxW as integer}</f:variable>
+    <f:if condition="!{maxWidth}">
+        <f:variable name="maxWidth">1200</f:variable>
+    </f:if>
+</f:if>
+
+<f:if condition="{link}">
+    <f:then>
+        <f:link.typolink
+            parameter="{link}"
+            class="{linkClass}"
+            additionalAttributes="{linkAdditionalAttributes}">
+            <f:render section="ImageOrPicture" arguments="{_all}" />
+        </f:link.typolink>
+    </f:then>
+    <f:else>
+        <f:if condition="{lightbox}">
+            <f:then>
+                <slim:lightbox
+                    src="{src}"
+                    image="{image}"
+                    class="{settings.media.lightbox.class}{f:if(condition: linkClass, then: ' {linkClass}')}"
+                    group="{lightboxGroup}"
+                    maxWidth="{settings.media.lightbox.maxWidth}"
+                    maxHeight="{settings.media.lightbox.maxHeight}">
+                    <span class="u-sr-only">Bild in Vollansicht öffnen</span>
+                    <f:render section="ImageOrPicture" arguments="{_all}" />
+                    <f:if condition="{image.description}">
+                        <span class="pswp-caption-content">{image.description -> f:format.nl2br()}</span>
+                    </f:if>
+                </slim:lightbox>
+            </f:then>
+            <f:else>
+                <f:render section="ImageOrPicture" arguments="{_all}" />
+            </f:else>
+        </f:if>
+    </f:else>
+</f:if>
+
+<f:section name="ImageOrPicture">
+    <slim:enhancedImageHelper
+        src="{src}"
+        image="{image}"
+        enhanced="{enhanced}"
+        maxWidth="{maxWidth}"
+        objectFit="{objectFit}"
+        breakpoints="{breakpoints}"
+        placeholder="{placeholder}"
+        as="enhancedImage" />
+
+    <f:if condition="{enhancedImage.sourceTags -> f:count()} > 0">
+        <f:then>
+            <picture>
+                <f:for each="{enhancedImage.sourceTags}" as="source" iteration="i">
+                    <source srcset="{source.srcset}" {f:if(condition: '{source.media}' , then: 'media="{source.media}"' )} type="{source.type}" />
+                </f:for>
+                <f:render section="Image" arguments="{_all}" />
+            </picture>
+        </f:then>
+        <f:else>
+            <f:render section="Image" arguments="{_all}" />
+        </f:else>
+    </f:if>
+</f:section>
+
+<f:section name="Image">
+    <f:image
+        src="{src}"
+        image="{image}"
+        treatIdAsReference="{treatIdAsReference}"
+        maxWidth="{maxWidth}"
+        maxHeight="{maxHeight}"
+        minWidth="{minWidth}"
+        minHeight="{minHeight}"
+        width="{width}"
+        height="{height}"
+        crop="{crop}"
+        cropVariant="{cropVariant}"
+        class="{class -> f:spaceless()}"
+        alt="{alt}"
+        id="{id}"
+        loading="{settings.media.lazyLoading}"
+        decoding="{settings.media.imageDecoding}"
+        data="{data}"
+        aria="{aria}"
+        style="{enhancedImage.placeholderStyle}{style}"
+        additionalAttributes="{additionalAttributes}" />
+</f:section>

@@ -1,0 +1,5 @@
+identifier: WeAreSlim/Fields/Header/Appearance
+fields:
+  - identifier: header_appearance
+    useExistingField: true
+    type: Select

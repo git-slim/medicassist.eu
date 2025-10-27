@@ -1,0 +1,5 @@
+name: weareslim/slimstart-dist
+label: 'slimstart dist'
+dependencies:
+  - typo3/fluid-styled-content
+  - weareslim/slimstart

@@ -1,0 +1,6 @@
+identifier: WeAreSlim/Fields/Header/Header
+fields:
+  - identifier: header
+    useExistingField: true
+    type: Text
+    required: true

@@ -1,0 +1,11 @@
+config {
+    pageTitleFirst = 1
+    pageTitleSeparator = |
+    pageTitleSeparator.noTrimWrap = | | |
+}
+
+[traverse(page, "uid") == site("rootPageId")]
+    config {
+        showWebsiteTitle = 0
+    }
+[END]

@@ -1,0 +1,13 @@
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <f:render partial="Navigation" arguments="{_all}" />
+
+    <main id="main" class="content-grid">
+        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+    </main>
+
+    <f:render partial="Footer" arguments="{_all}" />
+
+    <vite:asset extension="slimstart_dist" entry="src/js/Main.entry.ts" />
+</f:section>

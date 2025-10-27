@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="default.xlf" source-language="en" date="2025-02-26T14:17:59+00:00" product-name="acv">
+		<header/>
+		<body>
+			<trans-unit id="fields.backendOnlyHeader">
+				<source>Name - (Wird nur im Backend angezeigt)</source>
+			</trans-unit>
+			<trans-unit id="fields.subheader.label">
+				<source>Tagline</source>
+			</trans-unit>
+			<trans-unit id="fields.header_layout.label">
+				<source>Semantisches Überschrift-Level</source>
+			</trans-unit>
+			<trans-unit id="fields.header_appearance.label">
+				<source>Stilistisch dargestelltes Level für Überschrift</source>
+			</trans-unit>
+			<trans-unit id="fields.semantic_heading_type.label">
+				<source>Feld für semantische Überschrift</source>
+			</trans-unit>
+			<trans-unit id="fields.semantic_heading_type.description">
+				<source>Wählen Sie, ob die semantische Überschrift aus dem Tagline- oder Header-Feld stammen soll. Es sollte das Feld gewählt werden, das den Inhalt am besten wiederspiegelt.</source>
+			</trans-unit>
+			<trans-unit id="fields.header_color.label">
+				<source>Überschrift-Farbe</source>
+			</trans-unit>
+			<trans-unit id="fields.button_class.label">
+				<source>Button-Stil</source>
+			</trans-unit>
+			<trans-unit id="fields.button_class.items.special.label">
+				<source>Primär Orange</source>
+			</trans-unit>
+			<trans-unit id="fields.button_class.items.primary.label">
+				<source>Primär Anthrazit</source>
+			</trans-unit>
+			<trans-unit id="fields.button_class.items.secondary.label">
+				<source>Sekundär Grau</source>
+			</trans-unit>
+			<trans-unit id="fields.button_class.items.tertiary.label">
+				<source>Tertiär Weiß</source>
+			</trans-unit>
+			<trans-unit id="fields.button_class.items.green.label">
+				<source>Grün</source>
+			</trans-unit>
+			<trans-unit id="tab.structured_data">
+				<source>Strukturierte Daten</source>
+			</trans-unit>
+			<trans-unit id="fields.show_structured_data.label">
+				<source>Content als Strukturierte Daten für SEO ausgeben</source>
+			</trans-unit>
+			<trans-unit id="fields.main_entity_priority.label">
+				<source>Priorisierung als Hauptentität</source>
+			</trans-unit>
+			<trans-unit id="fields.main_entity_priority.description">
+				<source>Wichtig: Die Hauptentitäten müssen zum Seiten-Typ passen. Testen Sie die Seite hier: https://search.google.com/test/rich-results
+				
+				• Keine Hauptentität → Wird nur als normales Element verwendet (keine Anzeige in Rich-Suchergebnissen)
+				• Normale Hauptentität → Wird als normale Hauptentität verwendet (ggf. mit Entitäten anderer Elemente)
+				• Priorisierte Hauptentität → Wird als Hauptentität priorisiert und andere normale Hauptentitäten werden nicht mehr als Hauptentität verwendet</source>
+			</trans-unit>
+			<trans-unit id="fields.main_entity_priority.items.0.label">
+				<source>Keine Hauptentität</source>
+			</trans-unit>
+			<trans-unit id="fields.main_entity_priority.items.1.label">
+				<source>Normale Hauptentität</source>
+			</trans-unit>
+			<trans-unit id="fields.main_entity_priority.items.2.label">
+				<source>Priorisierte Hauptentität</source>
+			</trans-unit>
+			<trans-unit id="fields.infoBoxStructuredDataDescription">
+				<source>Für strukturierte Daten können nur die Listenpunkte verwendet werden. Listen aus dem Text RTE Feld können nicht mit einbezogen werden.</source>
+			</trans-unit>
+			<trans-unit id="fields.infoBoxListPointsDescription">
+				<source>Die Items werden als Liste dargestellt. Das Erscheinungsbild/Verhalten kann über das Feld "Listenpunkte Darstellung" im Reiter "Erscheinungsbild" </source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,58 @@
+{
+	"printWidth": 100,
+	"singleQuote": true,
+	"trailingComma": "es5",
+	"bracketSpacing": true,
+	"arrowParens": "avoid",
+	"semi": true,
+	"overrides": [
+		{
+			"files": [".prettierrc", ".eslintrc"],
+			"options": {
+				"parser": "json",
+				"printWidth": 80
+			}
+		},
+		{
+			"files": ["*.scss"],
+			"options": {
+				"parser": "scss",
+				"printWidth": 99999
+			}
+		},
+		{
+			"files": ["*.jsx"],
+			"options": {
+				"bracketSameLine": false,
+				"jsxBracketSameLine": false
+			}
+		},
+		{
+			"files": ["*.css"],
+			"options": {
+				"parser": "css",
+				"printWidth": 99999
+			}
+		},
+		{
+			"files": ["*.json"],
+			"options": {
+				"parser": "json"
+			}
+		},
+		{
+			"files": ["package.json"],
+			"options": {
+				"parser": "json",
+				"printWidth": 30
+			}
+		},
+		{
+			"files": ["*.yaml", "*.yml"],
+			"options": {
+				"parser": "yaml",
+				"printWidth": 99999
+			}
+		}
+	]
+}

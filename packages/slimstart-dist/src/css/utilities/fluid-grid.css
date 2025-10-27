@@ -1,0 +1,28 @@
+@utility fluid-grid {
+	--fluid-grid-col-size-calc: calc((100% - var(--fluid-grid-gap) * var(--fluid-grid-max-col-count)) / var(--fluid-grid-max-col-count));
+	--fluid-grid-col-min-size-calc: min(100%, max(var(--fluid-grid-min-col-size), var(--fluid-grid-col-size-calc)));
+
+	display: grid;
+	gap: var(--fluid-grid-gap);
+	grid-template-columns: repeat(auto-fit, minmax(var(--fluid-grid-col-min-size-calc), 1fr));
+}
+
+@utility fluid-grid-cols-* {
+	--fluid-grid-max-col-count: --value(integer);
+}
+
+@utility fluid-grid-size-* {
+	--fluid-grid-min-col-size: --value([absolute-size]);
+	/* prettier-ignore */
+	--fluid-grid-min-col-size: --value(--spacing-*);
+}
+
+@utility fluid-grid-gap-* {
+	--fluid-grid-gap: --value([absolute-size]);
+	/* prettier-ignore */
+	--fluid-grid-gap: --value(--spacing-*);
+}
+
+@utility tab-* {
+	tab-size: --value(integer);
+}

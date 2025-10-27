@@ -1,0 +1,7 @@
+plugin.tx_typo3vite.settings.slimstart_dist {
+    out = Resources/Public/Build
+    manifestFile = .vite/manifest.json
+    domain = https://vite.medicassist.eu.ddev.site
+    src =
+    port =
+}

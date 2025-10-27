@@ -1,0 +1,78 @@
+.ck.ck-content, /* workaround so the styles get applied to the ckeditors content in the backend after typo3s preprocessing */
+.rte {
+	& > * {
+		& + * {
+			margin-top: 0.75rem;
+		}
+		& + h1,
+		& + .h1,
+		& + h2,
+		& + .h2,
+		& + h3,
+		& + .h3,
+		& + h4,
+		& + .h4,
+		& + h5,
+		& + .h5 {
+			margin-top: 1.5rem;
+		}
+	}
+
+	p + p {
+		margin-top: 5rem;
+	}
+
+	strong,
+	b {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	a:not(.button) {
+		text-decoration-line: underline;
+		font-weight: var(--font-weight-semibold);
+
+		&:hover {
+			text-decoration-thickness: calc(2 * var(--t-ul-thickness, 7.5%));
+		}
+	}
+
+	.text-center {
+		text-align: center;
+	}
+	.text-end,
+	.text-right {
+		text-align: right;
+	}
+	.text-justify {
+		text-align: justify;
+	}
+
+	hr {
+		margin-block: 2.5rem;
+	}
+
+	ul,
+	ol {
+		padding-left: 1.5rem;
+		text-align: left;
+		li {
+			& + li {
+				margin-top: 0.5rem;
+			}
+		}
+	}
+	ul {
+		list-style-type: disc;
+	}
+	ol {
+		list-style-type: decimal;
+	}
+
+	.button-group,
+	.button,
+	p:has(.button) {
+		&:not(:first-child) {
+			margin-top: 2rem;
+		}
+	}
+}

@@ -1,0 +1,5 @@
+identifier: WeAreSlim/Fields/Header/Layout
+fields:
+  - identifier: header_layout
+    useExistingField: true
+    type: Select

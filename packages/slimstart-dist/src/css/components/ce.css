@@ -1,0 +1,80 @@
+/*
+* Each element automatically adds default spacing to its top unless it is the first element or the element before set a bottom spacing.
+* Each element can set its bottom spacing, but only if the next element does not set a top spacing.
+* Each element can set its top spacing, which always applies.
+*/
+
+.ce {
+	position: relative;
+	scroll-margin-top: var(--ce-anchor-offset);
+
+	--ce-spacing-top: var(--ce-spacing-sm);
+	--ce-spacing-bottom: var(--ce-spacing-sm);
+	@variant md {
+		--ce-spacing-top: var(--ce-spacing-md);
+		--ce-spacing-bottom: var(--ce-spacing-md);
+	}
+
+	& + .ce {
+		margin-top: var(--ce-spacing-top);
+	}
+
+	&.ce-spacing-bottom-none:not(:has(+ [class*='ce-spacing-top-'])) {
+		margin-bottom: calc(var(--ce-spacing-bottom) * -1) !important;
+	}
+
+	&.ce-spacing-top-none {
+		margin-top: 0 !important;
+	}
+
+	&[class*='ce-spacing-bottom-']:not(.ce-spacing-bottom-none):not(:has(+ [class*='ce-spacing-top-'])) {
+		margin-bottom: var(--ce-spacing-bottom);
+		& + .ce {
+			margin-top: 0;
+		}
+	}
+
+	&[class*='ce-spacing-top-'] {
+		margin-top: var(--ce-spacing-top);
+	}
+
+	/* Set variables for each spacing sizes */
+	&.ce-spacing-top-lg {
+		--ce-spacing-top: var(--ce-spacing-md);
+		@variant md {
+			--ce-spacing-top: var(--ce-spacing-lg);
+		}
+	}
+	&.ce-spacing-bottom-lg {
+		--ce-spacing-bottom: var(--ce-spacing-md);
+		@variant md {
+			--ce-spacing-bottom: var(--ce-spacing-lg);
+		}
+	}
+
+	&.ce-spacing-top-md {
+		--ce-spacing-top: var(--ce-spacing-sm);
+		@variant md {
+			--ce-spacing-top: var(--ce-spacing-md);
+		}
+	}
+	&.ce-spacing-bottom-md {
+		--ce-spacing-bottom: var(--ce-spacing-sm);
+		@variant md {
+			--ce-spacing-bottom: var(--ce-spacing-md);
+		}
+	}
+
+	&.ce-spacing-top-sm {
+		--ce-spacing-top: var(--ce-spacing-sm);
+		@variant md {
+			--ce-spacing-top: var(--ce-spacing-sm);
+		}
+	}
+	&.ce-spacing-bottom-sm {
+		--ce-spacing-bottom: var(--ce-spacing-sm);
+		@variant md {
+			--ce-spacing-bottom: var(--ce-spacing-sm);
+		}
+	}
+}

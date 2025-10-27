@@ -1,0 +1,18 @@
+{
+    "[html]": {
+        "editor.fontLigatures": false,
+        "files.insertFinalNewline": false,
+        "files.trimFinalNewlines": true,
+        "editor.defaultFormatter": "vscode.html-language-features",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4
+    },
+    "html.format.wrapLineLength": 0,
+    "html.format.wrapAttributes": "preserve",
+    "html.format.templating": true,
+    "xmlTools.splitXmlnsOnFormat": false,
+    "intelephense.environment.includePaths": ["./../../vendor"],
+    "scss.lint.emptyRules": "ignore",
+    "circleci.filters.branchFilter": "allBranches"
+}
+ 

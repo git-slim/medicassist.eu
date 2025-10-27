@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## Description: Simplified command for creating a new content block, because we need to specify the config path
+## Usage: make:content-block
+## Example: "ddev make:content-block"
+
+vendor/bin/typo3 make:content-block --config-path="packages/slimstart-dist/ContentBlocks/default.yaml"

@@ -1,0 +1,27 @@
+RTE {
+    default {
+        preset = slimstart_dist
+    }
+}
+
+TCEFORM {
+    tt_content {
+        space_after_class {
+            addItems {
+                ce-spacing-bottom-lg = Groß
+                ce-spacing-bottom-md = Mittel
+                ce-spacing-bottom-sm = Klein
+                ce-spacing-bottom-none = Kein Abstand
+            }
+        }
+
+        space_before_class {
+            addItems {
+                ce-spacing-top-lg = Groß
+                ce-spacing-top-md = Mittel
+                ce-spacing-top-sm = Klein
+                ce-spacing-top-none = Kein Abstand
+            }
+        }
+    }
+}

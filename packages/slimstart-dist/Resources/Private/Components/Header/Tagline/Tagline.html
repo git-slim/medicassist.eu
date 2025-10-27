@@ -1,0 +1,12 @@
+<f:argument name="layout" type="mixed" optional="{true}" />
+<f:argument name="class" type="string" optional="{true}" />
+
+<f:if condition="!{layout}">
+    <f:variable name="layout">{settings.defaultHeaderType}</f:variable>
+</f:if>
+<f:if condition="{layout as integer}">
+    <f:variable name="layout">h{layout}</f:variable>
+</f:if>
+<{layout} class="tagline{f:if(condition: '{class}', then: ' {class}')}">
+    <f:slot />
+</{layout}>

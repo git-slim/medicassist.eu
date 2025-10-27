@@ -1,0 +1,40 @@
+media:
+  maxWidth: 1200
+  lightbox:
+    class: 'lightbox'
+    maxWidth: 1400
+    maxHeight: 1400
+  enhanced:
+    noEnhancementForExtensions: 'svg, gif'
+    noPlaceholderForExtensions: 'svg, gif'
+    coverMultiplier: 1.3
+    # TODO: remove reduncancy in this options
+    breakpoints:
+      default:
+        - identifier: 'default'
+          breakpoint: 1200
+          maxWidth: 1200
+        - identifier: 'tablet'
+          breakpoint: 900
+          maxWidth: 1200
+        - identifier: 'tablet'
+          breakpoint: 700
+          maxWidth: 900
+        - identifier: 'mobile'
+          breakpoint: 500
+          maxWidth: 700
+        - identifier: 'mobile'
+          breakpoint: 0
+          maxWidth: 500
+
+styles:
+  templates:
+    layoutRootPath: 'EXT:slimstart_dist/Resources/Private/ContentElements/Layouts/'
+    partialRootPath: 'EXT:slimstart_dist/Resources/Private/ContentElements/Partials/'
+    templateRootPath: 'EXT:slimstart_dist/Resources/Private/ContentElements/Templates/'
+
+page:
+  fluidtemplate:
+    layoutRootPath: EXT:slimstart_dist/Resources/Private/Page/Layouts/
+    templateRootPath: EXT:slimstart_dist/Resources/Private/Page/Templates/
+    partialRootPath: EXT:slimstart_dist/Resources/Private/Page/Partials/

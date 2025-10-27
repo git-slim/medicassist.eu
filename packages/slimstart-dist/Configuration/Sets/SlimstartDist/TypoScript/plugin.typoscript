@@ -1,0 +1,17 @@
+plugin.tx_slimstart_dist {
+    view {
+        templateRootPaths {
+            10 = EXT:slimstart_dist/Resources/Private/ContentElements/Templates/
+        }
+
+        partialRootPaths {
+            10 = EXT:slimstart_dist/Resources/Private/ContentElements/Partials/
+        }
+
+        layoutRootPaths {
+            10 = EXT:slimstart_dist/Resources/Private/ContentElements/Layouts/
+        }
+    }
+
+    settings < plugin.tx_slimstart.settings
+}

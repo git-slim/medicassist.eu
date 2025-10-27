@@ -1,0 +1,5 @@
+identifier: WeAreSlim/Fields/Header/Subheader
+fields:
+  - identifier: subheader
+    useExistingField: true
+    type: Text

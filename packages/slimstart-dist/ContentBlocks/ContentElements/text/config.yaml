@@ -1,0 +1,13 @@
+name: weareslim/text
+typeName: weareslim_text
+group: default
+prefixFields: true
+prefixType: vendor
+basics:
+  - TYPO3/Appearance
+fields:
+  - identifier: WeAreSlim/Fields/Header/All
+    type: Basic
+  - identifier: bodytext
+    useExistingField: true
+    enableRichtext: true

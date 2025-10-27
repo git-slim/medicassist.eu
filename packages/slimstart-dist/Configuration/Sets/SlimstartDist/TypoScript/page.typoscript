@@ -1,0 +1,14 @@
+page = PAGE
+page {
+    10 {
+        dataProcessing {
+            30 = menu
+            30  {
+                as = mainNav
+                levels = 2
+            }
+        }
+
+        settings < plugin.tx_slimstart_dist.settings
+    }
+}

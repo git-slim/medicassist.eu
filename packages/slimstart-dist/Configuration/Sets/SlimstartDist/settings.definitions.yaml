@@ -1,0 +1,20 @@
+categories:
+  slimstartDist:
+    label: 'slimstart dist'
+  slimstartDist.system:
+    label: 'System'
+    parent: slimstartDist
+  slimstartDist.pages:
+    label: 'Seiten'
+    parent: slimstartDist
+  slimstartDist.storages:
+    label: 'Storages'
+    parent: slimstartDist
+
+settings:
+  slimstartDist.pages.privacyPageId:
+    label: 'Datenschutz-Seiten ID'
+    description: 'UID der Datenschutz-Seite'
+    category: slimstartDist.pages
+    type: number
+    default: 0

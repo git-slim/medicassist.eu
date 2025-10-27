@@ -1,0 +1,5 @@
+identifier: WeAreSlim/Fields/Header/SemanticType
+fields:
+  - identifier: semantic_heading_type
+    useExistingField: true
+    type: Select

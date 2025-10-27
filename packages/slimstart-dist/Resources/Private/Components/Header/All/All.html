@@ -1,0 +1,70 @@
+<f:argument name="data" type="mixed" optional="{true}" />
+<f:argument name="headerLayout" type="integer" optional="{true}" />
+<f:argument name="headerAppearance" type="integer" optional="{true}" />
+<f:argument name="header" type="string" optional="{true}" />
+<f:argument name="subheader" type="string" optional="{true}" />
+<f:argument name="semanticHeadingType" type="string" optional="{true}" />
+<f:argument name="headerClass" type="string" optional="{true}" />
+<f:argument name="additionalHeaderGroupClass" type="string" optional="{true}" />
+
+<f:if condition="!{headerLayout}">
+    <f:variable name="headerLayout">{data.header_layout}</f:variable>
+    <f:if condition="!{headerLayout}">
+        <f:variable name="headerLayout">{settings.defaultHeaderType}</f:variable>
+    </f:if>
+</f:if>
+
+<f:if condition="!{headerAppearance}">
+    <f:variable name="headerAppearance">{data.header_appearance}</f:variable>
+    <f:if condition="!{headerAppearance}">
+        <f:variable name="headerAppearance">{headerLayout}</f:variable>
+    </f:if>
+</f:if>
+
+<f:if condition="!{header}">
+    <f:variable name="header">{data.header}</f:variable>
+</f:if>
+
+<f:if condition="!{subheader}">
+    <f:variable name="subheader">{data.subheader}</f:variable>
+</f:if>
+
+<f:if condition="!{semanticHeadingType}">
+    <f:variable name="semanticHeadingType">{data.semantic_heading_type}</f:variable>
+</f:if>
+
+<f:if condition="{headerLayout} != 100">
+    <f:if condition="{header} || {subheader}">
+        <f:variable name="headingLayout">{headerLayout}</f:variable>
+        <f:variable name="taglineLayout">{headerLayout}</f:variable>
+
+        <f:variable name="headerGroupTag">div</f:variable>
+        <f:if condition="{header} && {subheader}">
+            <f:variable name="headerGroupTag">hgroup</f:variable>
+            <f:switch expression="{semanticHeadingType}">
+                <f:case value="header">
+                    <f:variable name="taglineLayout">p</f:variable>
+                </f:case>
+                <f:case value="tagline">
+                    <f:variable name="headingLayout">p</f:variable>
+                </f:case>
+                <f:defaultCase>
+                    <f:variable name="headingLayout">p</f:variable>
+                </f:defaultCase>
+            </f:switch>
+        </f:if>
+
+        <{headerGroupTag} class="heading-group{f:if(condition: '{additionalHeaderGroupClass}' , then: ' {additionalHeaderGroupClass}' )}">
+            <f:if condition="{subheader}">
+                <ui:header.tagline layout="{taglineLayout}" class="{headerClass}">
+                    {subheader}
+                </ui:header.tagline>
+            </f:if>
+            <f:if condition="{header}">
+                <ui:header.header layout="{headingLayout}" class="{f:if(condition: '{headerAppearance as integer}', then: 'h{headerAppearance}', else: headerAppearance)}{f:if(condition: headerClass, then: ' {headerClass}')}">
+                    {header}
+                </ui:header.header>
+            </f:if>
+        </{headerGroupTag}>
+    </f:if>
+</f:if>

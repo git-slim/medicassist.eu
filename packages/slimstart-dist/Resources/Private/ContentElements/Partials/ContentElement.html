@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:section name="Main">
+	<f:if condition="!{name}">
+		<f:variable name="name">{data.CType}</f:variable>
+	</f:if>
+
+	<f:switch expression="{data.CType}">
+		<f:case value="shortcut">
+			<f:render section="raw" arguments="{_all}" />
+		</f:case>
+		<f:defaultCase>
+			<f:render section="default" arguments="{_all}" />
+		</f:defaultCase>
+	</f:switch>
+</f:section>
+
+<f:section name="default">
+	<div
+		id="c{data.uid}"
+		class="ce {name} frame frame-{data.frame_class -> f:or(alternative: 'default')} frame-type-{name} frame-layout-{data.layout -> f:or(alternative: 0)}{f:if(condition: data.space_before_class, then: ' {data.space_before_class}' )}{f:if(condition: data.space_after_class, then: ' {data.space_after_class}' )}{f:if(condition: additionalClasses, then: ' {additionalClasses -> f:spaceless()}' )}"
+		data-cid="{data.uid}"
+		{f:if(condition: additionalData, then: '{additionalData -> f:format.raw()}' )}>
+		<f:render section="raw" arguments="{_all}" />
+	</div>
+</f:section>
+
+<f:section name="raw">
+	{content -> f:format.raw() -> f:spaceless()}
+</f:section>
+
+</html>

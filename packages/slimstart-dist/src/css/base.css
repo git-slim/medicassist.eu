@@ -1,0 +1,45 @@
+/* Better default for buttons */
+button,
+input:where([type='button'], [type='reset'], [type='submit']),
+[role='button'] {
+	&[disabled],
+	&[aria-disabled='true'] {
+		pointer-events: none;
+		cursor: not-allowed;
+	}
+
+	&:not([disabled], [aria-disabled='true']) {
+		cursor: pointer;
+	}
+
+	> * {
+		pointer-events: none;
+	}
+
+	/* prevent zoom on double tap */
+	@media not (hover: hover) {
+		touch-action: manipulation;
+	}
+}
+
+img {
+	object-fit: contain;
+}
+
+/* Picture element styles */
+picture {
+	display: contents;
+	& > source {
+		display: none;
+	}
+}
+
+/* Basic link elements are underlined */
+a {
+	color: inherit;
+	text-underline-offset: var(--t-ul-offset, 12%);
+	text-decoration-thickness: var(--t-ul-thickness, 7.5%);
+}
+a[class] {
+	text-decoration-line: unset;
+}

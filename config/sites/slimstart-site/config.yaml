@@ -1,0 +1,27 @@
+base: 'https://medicassist.eu.ddev.site'
+baseVariants:
+  - base: 'https://medicassist.dev'
+    condition: 'getenv("HOST_MAIN") == "dev"'
+dependencies:
+  - weareslim/slimstart-dist
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=5'
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    locale: de_DE.utf8
+    navigationTitle: German
+    flag: de
+    hreflang: de-DE
+    websiteTitle: ''
+rootPageId: 1
+settings:
+  redirects:
+    autoCreateRedirects: false
+websiteTitle: slimstart

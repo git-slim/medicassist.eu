@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+@import './theme.css';
+@import './safelist.css';
+@import './base.css' layer(base);
+@import './utilities/headings.css';
+@import './utilities/content-grid.css';
+@import './utilities/fluid-grid.css';
+@import './utilities/clickable-area.css';
+@import './components/ce.css' layer(components);
+@import './components/rte.css' layer(components);
+
+html {
+	text-rendering: optimizeSpeed;
+	-webkit-font-smoothing: antialiased;
+	@variant motion-safe {
+		scroll-behavior: smooth;
+	}
+}
+
+body {
+	min-height: 100vh;
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+}
+
+main {
+	flex: 1;
+	grid-auto-rows: min-content;
+}

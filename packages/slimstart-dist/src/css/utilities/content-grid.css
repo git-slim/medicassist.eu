@@ -1,0 +1,81 @@
+@utility content-grid {
+	--content-padding-inline: 1rem;
+	@variant md {
+		--content-padding-inline: 1.25rem;
+	}
+	--content-max-width: 1240px;
+	--content-breakout-size: 120px;
+	--content-columns: 12;
+	--content-column-spacing: 1.5rem;
+
+	display: grid;
+	grid-template-columns:
+		[full-width-start] minmax(var(--content-padding-inline), 1fr)
+		[breakout-start] minmax(0, var(--content-breakout-size))
+		[content-start narrow-content-left-start] min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		var(--content-column-spacing)
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		var(--content-column-spacing)
+		[narrow-content-start]
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		var(--content-column-spacing)
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		var(--content-column-spacing)
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		var(--content-column-spacing)
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		var(--content-column-spacing)
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		var(--content-column-spacing)
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		[narrow-content-left-end]
+		var(--content-column-spacing)
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		var(--content-column-spacing)
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		[narrow-content-end]
+		var(--content-column-spacing)
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		var(--content-column-spacing)
+		min((100% - (var(--content-padding-inline) * 2) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns), calc((var(--content-max-width) - (calc(var(--content-columns) - 1) * var(--content-column-spacing))) / var(--content-columns)))
+		[content-end] minmax(0, var(--content-breakout-size)) [breakout-end]
+		minmax(var(--content-padding-inline), 1fr) [full-width-end];
+}
+
+@layer utilities {
+	.content-grid > *,
+	.full-width > * {
+		grid-column: content;
+	}
+	.content-grid > .breakout {
+		grid-column: breakout;
+	}
+
+	.content-grid > .narrow-content {
+		@variant md {
+			grid-column: narrow-content;
+		}
+	}
+	.content-grid > .narrow-content-left {
+		@variant md {
+			grid-column: narrow-content-left;
+		}
+	}
+	.content-grid > .full-width {
+		grid-column: full-width;
+	}
+	.content-grid > .full-width-mobile {
+		grid-column: full-width;
+
+		@variant md {
+			grid-column: content;
+		}
+	}
+	.content-grid > .full-width-large {
+		grid-column: content;
+
+		@variant lg {
+			grid-column: full-width;
+		}
+	}
+}

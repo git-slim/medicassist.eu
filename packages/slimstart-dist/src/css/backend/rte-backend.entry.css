@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@import '../theme.css';
+@import '../safelist.css';
+@import '../base.css' layer(base);
+@import '../utilities/headings.css';
+@import '../components/rte.css' layer(components);
+
+body {
+	font-size: 16px;
+}

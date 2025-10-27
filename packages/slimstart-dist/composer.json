@@ -1,0 +1,27 @@
+{
+    "name": "weareslim/slimstart-dist",
+    "type": "typo3-cms-extension",
+    "description": "Project Kickstarter",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Joost Ramke",
+            "role": "Developer",
+            "email": "joost.ramke@weareslim.de"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^13.4",
+        "weareslim/slimstart": "^0.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "WeAreSlim\\SlimstartDist\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "slimstart_dist"
+        }
+    }
+}

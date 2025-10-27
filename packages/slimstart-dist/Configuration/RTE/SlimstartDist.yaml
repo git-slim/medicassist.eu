@@ -1,0 +1,10 @@
+imports:
+  - { resource: 'EXT:slimstart/Configuration/RTE/Slimstart.yaml' }
+
+editor:
+  config:
+    contentsCss:
+      - 'EXT:slimstart_dist/Resources/Public/Build/backend/rte-backend.css'
+    # style:
+    #   definitions:
+    #     - { name: 'Button Primary', element: 'a', classes: ['button', 'button--primary'] }

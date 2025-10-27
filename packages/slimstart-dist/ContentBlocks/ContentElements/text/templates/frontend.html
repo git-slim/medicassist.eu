@@ -1,0 +1,14 @@
+<f:layout name="Default" />
+
+<f:section name="Config">
+    <f:variable name="name">text</f:variable>
+</f:section>
+
+<f:section name="Main">
+    <ui:header.all data="{data}" />
+    <f:if condition="{data.bodytext}">
+        <div class="rte">
+            <f:format.html>{data.bodytext}</f:format.html>
+        </div>
+    </f:if>
+</f:section>

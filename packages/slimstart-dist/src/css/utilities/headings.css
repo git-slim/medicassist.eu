@@ -1,0 +1,66 @@
+@utility h1 {
+	font-weight: 600;
+	font-family: var(--font-heading);
+	@apply text-h1;
+}
+
+@utility h2 {
+	font-weight: 600;
+	font-family: var(--font-heading);
+	@apply text-h2;
+}
+
+@utility h3 {
+	font-weight: 600;
+	font-family: var(--font-heading);
+	@apply text-h3;
+}
+
+@utility h4 {
+	font-weight: 600;
+	font-family: var(--font-heading);
+	@apply text-h4;
+}
+
+@utility h5 {
+	font-weight: 600;
+	font-family: var(--font-heading);
+	@apply text-h5;
+}
+
+@layer utilities {
+	h1 {
+		@apply h1;
+	}
+
+	h2 {
+		@apply h2;
+	}
+
+	h3 {
+		@apply h3;
+	}
+
+	h4 {
+		@apply h4;
+	}
+
+	h5 {
+		@apply h5;
+	}
+
+	.heading-group {
+		&:not(:last-child) {
+			margin-bottom: 1.25rem;
+			&:has(+ .rte) {
+				margin-bottom: var(--heading-group-spacing, 0.75rem);
+			}
+			&:has(+ .rte > .table:first-child) {
+				margin-bottom: calc(var(--heading-group-spacing, 0.75rem) + 0.2rem);
+			}
+		}
+		& > * + * {
+			margin-top: var(--heading-group-spacing);
+		}
+	}
+}

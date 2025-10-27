@@ -1,0 +1,6 @@
+identifier: WeAreSlim/Fields/Configuration/BackendOnlyHeader
+fields:
+  - identifier: header
+    prefixField: false
+    type: Text
+    label: LLL:EXT:slimstart_dist/ContentBlocks/default.xlf:fields.backendOnlyHeader

@@ -1,0 +1,7 @@
+[
+    "./js/Main.entry.ts",
+    "./../ContentBlocks/ContentElements/*/source/*.entry.{ts,tsx,js,jsx}",
+    "./../Resources/Private/Components/**/source/*.entry.{ts,tsx,js,jsx}",
+    "./js/Components/**/*.entry.{ts,tsx,js,jsx}",
+    "./css/backend/*.entry.css"
+]

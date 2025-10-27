@@ -1,0 +1,12 @@
+vendor: weareslim
+extension: slimstart_dist
+content-type: content-element
+skeleton-path: packages/slimstart-dist/ContentBlocks/Skeleton
+config:
+  content-element:
+    prefixFields: true
+    prefixType: vendor
+    basics:
+      - TYPO3/Appearance
+  page-type:
+    prefixFields: false

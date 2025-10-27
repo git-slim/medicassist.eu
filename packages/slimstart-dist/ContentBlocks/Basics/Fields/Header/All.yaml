@@ -1,0 +1,17 @@
+identifier: WeAreSlim/Fields/Header/All
+fields:
+  - identifier: header_palette
+    type: Palette
+    fields:
+      - identifier: WeAreSlim/Fields/Header/Header
+        type: Basic
+      - identifier: WeAreSlim/Fields/Header/Subheader
+        type: Basic
+      - type: Linebreak
+      - identifier: WeAreSlim/Fields/Header/Layout
+        type: Basic
+      - identifier: WeAreSlim/Fields/Header/Appearance
+        type: Basic
+      - type: Linebreak
+      - identifier: WeAreSlim/Fields/Header/SemanticType
+        type: Basic
