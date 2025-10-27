@@ -18,6 +18,7 @@ web_environment:
     - SLIMSTART_GITHUB_TOKEN=${SLIMSTART_GITHUB_TOKEN}
     - COMPOSER_AUTH={\"github-oauth\":{\"github.com\":\"${SLIMSTART_GITHUB_TOKEN}\"}}
 corepack_enable: false
+nodejs_version: "22"
 hooks:
   post-start:
     - exec: "composer i"

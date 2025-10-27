@@ -16,6 +16,7 @@
 	"require": {
 		"crazy252/typo3_vite": "dev-feature/allow-better-configuration",
 		"friendsoftypo3/content-blocks": "^1",
+		"jramke/fluid-primitives": "^0.2.0",
 		"typo3/cms-backend": "^13.4",
 		"typo3/cms-belog": "^13.4",
 		"typo3/cms-beuser": "^13.4",

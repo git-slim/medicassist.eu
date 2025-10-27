@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c12bd1915941e7bee2b0b2629a5ea9d2",
+    "content-hash": "a07b5d5f952e9aead6965d4098d0a745",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1251,6 +1251,58 @@
                 }
             ],
             "time": "2025-08-23T21:21:41+00:00"
+        },
+        {
+            "name": "jramke/fluid-primitives",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jramke/fluid-primitives.git",
+                "reference": "65b7cd26deab2b200f8afa2fdebc8592e3af3f8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jramke/fluid-primitives/zipball/65b7cd26deab2b200f8afa2fdebc8592e3af3f8f",
+                "reference": "65b7cd26deab2b200f8afa2fdebc8592e3af3f8f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "typo3/cms-fluid": "^13.4",
+                "typo3fluid/fluid": "^4"
+            },
+            "replace": {
+                "typo3-ter/fluid_primitives": "*"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "fluid_primitives"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jramke\\FluidPrimitives\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Joost Ramke",
+                    "email": "hey@joostramke.com",
+                    "homepage": "https://joostramke.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The headless component library for TYPO3 Fluid",
+            "support": {
+                "issues": "https://github.com/jramke/fluid-primitives/issues",
+                "source": "https://github.com/jramke/fluid-primitives/tree/0.2.0"
+            },
+            "time": "2025-10-26T20:13:39+00:00"
         },
         {
             "name": "lolli42/finediff",

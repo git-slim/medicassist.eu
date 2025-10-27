@@ -13,5 +13,8 @@
         "typescript": "^5.9.3",
         "vite": "^7.1.10",
         "vite-plugin-typo3": "^2.1.0"
+    },
+    "dependencies": {
+        "fluid-primitives": "^0.2.0"
     }
 }
