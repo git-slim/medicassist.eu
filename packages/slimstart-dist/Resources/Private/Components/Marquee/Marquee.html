@@ -5,11 +5,10 @@
     <ui:carousel.root controlled="{true}" rootId="marquee-{context.rootId}">
         <ui:carousel.content class="overflow-hidden">
             <f:for each="{items -> f:shuffle()}" as="item" iteration="i">
-                <ui:carousel.item>
-                    <div class="px-6 py-3 text-lg rounded-full border border-white">
-                        {item}
-                    </div>
-                </ui:carousel.item>
+                <f:render section="item" arguments="{item: item, __context_carousel: __context_carousel, ariaHidden: false}" />
+            </f:for>
+            <f:for each="{items -> f:shuffle()}" as="item" iteration="i">
+                <f:render section="item" arguments="{item: item, __context_carousel: __context_carousel, ariaHidden: true}" />
             </f:for>
         </ui:carousel.content>
         <div class="hidden">
@@ -19,5 +18,13 @@
         </div>
     </ui:carousel.root>
 </div>
+
+<f:section name="item">
+    <ui:carousel.item aria-hidden="{f:if(condition: ariaHidden, then: 'true', else: 'false')}">
+        <div class="px-6 py-3 text-lg rounded-full border border-white">
+            {item}
+        </div>
+    </ui:carousel.item>
+</f:section>
 
 <vite:asset extension="slimstart_dist" entry="Resources/Private/Components/Marquee/Marquee.entry.ts" />
