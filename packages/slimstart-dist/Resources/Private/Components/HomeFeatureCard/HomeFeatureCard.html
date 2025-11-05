@@ -1,0 +1,17 @@
+<ui:prop name="title" type="string" />
+<ui:prop name="description" type="string" />
+
+<div class="cta-gradient p-5 grid grid-cols-[calc(var(--spacing)*15)_1fr] gap-4 rounded-tr-lg" {ui:ref(name: 'root' )}>
+    <div {ui:ref(name: 'icon' )} class="flex justify-center" aria-hidden="true">
+        <svg xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle size-15">
+            <circle cx="12" cy="12" r="10"></circle>
+        </svg>
+    </div>
+    <div class="col-start-2">
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <ui:button class="mt-4">Mehr erfahren</ui:button>
+    </div>
+</div>
+
+<vite:asset extension="slimstart_dist" entry="Resources/Private/Components/HomeFeatureCard/HomeFeatureCard.entry.ts" />

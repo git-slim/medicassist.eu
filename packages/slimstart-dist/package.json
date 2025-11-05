@@ -15,6 +15,10 @@
         "vite-plugin-typo3": "^2.1.0"
     },
     "dependencies": {
-        "fluid-primitives": "^0.2.0"
+        "embla-carousel": "^8.6.0",
+        "embla-carousel-auto-height": "^8.6.0",
+        "embla-carousel-auto-scroll": "^8.6.0",
+        "fluid-primitives": "^0.5.1",
+        "motion": "^12.23.24"
     }
 }

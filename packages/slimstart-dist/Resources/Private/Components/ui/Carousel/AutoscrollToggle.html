@@ -1,0 +1,14 @@
+<ui:prop name="playText" type="string" />
+<ui:prop name="stopText" type="string" />
+
+<f:variable name="refData" value="{
+    'stop-text': stopText,
+    'play-text': playText
+}" />
+
+<span
+    {f:if(condition: class, then: 'class="{class}"' )}
+    {ui:ref(name: 'autoscroll-toggle' , data: refData)}
+    {ui:attributes()}>
+    {f:if(condition: '{true}', then: '{stopText}', else: '{playText}')}
+</span>

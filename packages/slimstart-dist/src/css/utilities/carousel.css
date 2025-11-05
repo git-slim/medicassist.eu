@@ -1,0 +1,12 @@
+@utility carousel-container {
+	display: flex;
+	touch-action: pan-y pinch-zoom;
+	margin-left: calc(var(--item-spacing, 0px) * -1);
+}
+
+@utility carousel-item {
+	transform: translate3d(0, 0, 0);
+	flex: 0 0 var(--item-size, auto);
+	min-width: 0;
+	padding-left: var(--item-spacing, 0px);
+}
