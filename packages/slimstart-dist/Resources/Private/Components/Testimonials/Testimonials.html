@@ -1,0 +1,36 @@
+<f:variable name="testimonials" value="{
+    0: { text: 'SlimStart hat unsere Erwartungen übertroffen! Die einfache Bedienung und das ansprechende Design machen es zu einem unverzichtbaren Werkzeug für unser Team.', author: 'Anna M.' },
+    1: { text: 'Die Integration von SlimStart in unsere bestehende Infrastruktur war nahtlos. Der Support war hervorragend und hat uns bei jedem Schritt unterstützt.', author: 'Markus T.' },
+    2: { text: 'Wir sind begeistert von den Funktionen, die SlimStart bietet. Es hat unsere Produktivität erheblich gesteigert und die Zusammenarbeit im Team verbessert.', author: 'Sophie L.' },
+}" />
+
+<div {ui:ref(name: 'root' )}>
+    <ui:carousel.root class="[--item-size:100%] [--item-spacing:2rem] flex gap-5 items-center justify-center" controlled="{true}" rootId="testimonials-{context.rootId}">
+        <ui:carousel.prevTrigger class="size-10">
+            <span class="sr-only">Vorheriges Item</span>
+            <svg aria-hidden="true" width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.241 43C10.5214 43 0.999757 33.6092 0.999758 22C0.999759 10.3908 10.5214 0.999997 22.241 0.999998C33.9604 1.00019 43.4812 10.3909 43.4812 22C43.4812 33.6091 33.9604 42.9998 22.241 43Z" stroke="white" stroke-width="2" />
+                <path d="M24.727 15.334L17.625 22.0007L24.727 28.6673" stroke="white" stroke-width="2" />
+            </svg>
+        </ui:carousel.prevTrigger>
+        <ui:carousel.content class="overflow-hidden">
+            <f:for each="{testimonials}" as="testimonial" iteration="i">
+                <ui:carousel.item>
+                    <div class="text-center max-w-[650px] mx-auto">
+                        <p class="text-h4 mb-8">"{testimonial.text}"</p>
+                        <p class="font-bold">{testimonial.author}</p>
+                    </div>
+                </ui:carousel.item>
+            </f:for>
+        </ui:carousel.content>
+        <ui:carousel.nextTrigger class="size-10">
+            <span class="sr-only">Nächstes Item</span>
+            <svg aria-hidden="true" width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.2402 1C33.9598 1.00001 43.4814 10.3908 43.4814 22C43.4814 33.6092 33.9598 43 22.2402 43C10.5208 42.9998 0.999994 33.6091 0.999996 22C0.999999 10.3909 10.5209 1.00019 22.2402 1Z" stroke="white" stroke-width="2" />
+                <path d="M19.754 28.666L26.856 21.9993L19.754 15.3327" stroke="white" stroke-width="2" />
+            </svg>
+        </ui:carousel.nextTrigger>
+    </ui:carousel.root>
+</div>
+
+<vite:asset extension="slimstart_dist" entry="Resources/Private/Components/Testimonials/Testimonials.entry.ts" />

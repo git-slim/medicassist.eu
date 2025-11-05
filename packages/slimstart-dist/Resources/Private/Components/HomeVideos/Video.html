@@ -1,0 +1,12 @@
+<ui:prop name="src" type="string" />
+
+<video
+    class="{ui:cn(value: 'absolute inset-0 size-full object-cover {class}')}"
+    {ui:ref(name: 'video' )}
+    {ui:attributes()}
+    src="{src}"
+    muted
+    loop
+    playsinline
+    autoplay>
+</video>

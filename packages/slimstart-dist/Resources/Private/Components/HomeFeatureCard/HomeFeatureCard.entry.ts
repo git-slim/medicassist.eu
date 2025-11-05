@@ -91,8 +91,8 @@ const NAME = 'home-feature-card';
 			if (!iconClone) return;
 			iconClone.setAttribute('hidden', 'true'); // we set hidden for now, if we animate we need to check/cancel ongoing animations like the show animation
 			return () => {
-				svg.style.opacity = '1';
-				iconClone.removeAttribute('hidden');
+				// svg.style.opacity = '1';
+				// iconClone.removeAttribute('hidden');
 			};
 		});
 	});

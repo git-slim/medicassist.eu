@@ -4,7 +4,7 @@
     <f:render partial="Navigation" arguments="{_all}" />
 
     <main id="main" class="content-grid">
-        <div class="full-width">
+        <div class="full-width ce">
             <div class="home-grid">
                 <div class="home-grid-left sticky top-0 h-screen flex flex-col justify-center">
                     <div class="relative w-full">
@@ -12,7 +12,7 @@
                             src="EXT:slimstart_dist/Resources/Public/Images/defi.png"
                             class="w-[115%] max-w-none -ml-[15%]" />
                         <ui:checkmark
-                            class="[--offset-y:24%] [--offset-x:18%] absolute top-[calc(50%+var(--offset-y))] left-[calc(50%+var(--offset-x))] -translate-x-[50%] -translate-y-[50%] max-w-none pointer-events-none" />
+                            class=" [--offset-y:24%] [--offset-x:18%] absolute top-[calc(50%+var(--offset-y))] left-[calc(50%+var(--offset-x))] -translate-x-[50%] -translate-y-[50%] max-w-none pointer-events-none" />
                     </div>
                 </div>
                 <div class="home-grid-right min-h-screen flex flex-col justify-center">
@@ -84,16 +84,18 @@
                                 description="{feature.description}" />
                         </f:for>
                     </div>
-                    <div class="h-[150vh]"></div>
+                    <div class="h-[105vh]"></div>
                     <div id="hide-checkmark"></div>
                 </div>
 
                 <div class="ce home-grid-full">
-                    <div class="content-grid">
-                        video
-                    </div>
+                    <ui:homeVideos.root>
+                    </ui:homeVideos.root>
                 </div>
             </div>
+        </div>
+        <div class="ce">
+            <ui:testimonials />
         </div>
 
         <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />

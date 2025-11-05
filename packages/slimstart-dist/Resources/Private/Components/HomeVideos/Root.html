@@ -1,0 +1,25 @@
+<div class="relative">
+    <div class="sticky top-0 h-screen w-full pointer-events-none -z-10">
+        <ui:homeVideos.video src="{f:uri.resource(path:'EXT:slimstart_dist/Resources/Public/Videos/video1.mp4')}" title="Video 1" />
+        <ui:homeVideos.video src="{f:uri.resource(path:'EXT:slimstart_dist/Resources/Public/Videos/video2.mp4')}" title="Video 2" />
+        <ui:homeVideos.video src="{f:uri.resource(path:'EXT:slimstart_dist/Resources/Public/Videos/video3.mp4')}" title="Video 3" />
+        <div role="presentation" class="absolute inset-0 size-full bg-[#1B142FB2] backdrop-blur-md"></div>
+    </div>
+    <div class="home-grid relative">
+        <div class="home-grid-right flex flex-col justify-center min-h-screen -mt-[100vh]" {ui:ref(name: 'item' )}>
+            <h3>Rettungsgerät in Aktion</h3>
+            <p>Sehen Sie, wie unser READY Defibrillator Leben rettet.</p>
+        </div>
+        <div class="home-grid-right flex flex-col justify-center min-h-screen" {ui:ref(name: 'item' )}>
+            <h3>Rettungsgerät in Aktion</h3>
+            <p>Sehen Sie, wie unser READY Defibrillator Leben rettet.</p>
+        </div>
+        <div class="home-grid-right flex flex-col justify-center min-h-screen" {ui:ref(name: 'item' )}>
+            <h3>Rettungsgerät in Aktion</h3>
+            <p>Sehen Sie, wie unser READY Defibrillator Leben rettet.</p>
+        </div>
+    </div>
+</div>
+
+
+<vite:asset extension="slimstart_dist" entry="Resources/Private/Components/HomeVideos/HomeVideos.entry.ts" />
