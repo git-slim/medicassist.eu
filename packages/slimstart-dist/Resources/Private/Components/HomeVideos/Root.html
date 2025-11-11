@@ -1,22 +1,25 @@
 <div class="relative">
-    <div class="sticky top-0 h-screen w-full pointer-events-none -z-10">
+    <div class="sticky top-0 h-screen w-full pointer-events-none -z-10 hidden lg:block">
         <ui:homeVideos.video src="{f:uri.resource(path:'EXT:slimstart_dist/Resources/Public/Videos/video1.mp4')}" title="Video 1" />
         <ui:homeVideos.video src="{f:uri.resource(path:'EXT:slimstart_dist/Resources/Public/Videos/video2.mp4')}" title="Video 2" />
         <ui:homeVideos.video src="{f:uri.resource(path:'EXT:slimstart_dist/Resources/Public/Videos/video3.mp4')}" title="Video 3" />
         <div role="presentation" class="absolute inset-0 size-full bg-[#1B142FB2] backdrop-blur-md"></div>
     </div>
-    <div class="home-grid relative">
-        <div class="home-grid-right flex flex-col justify-center items-start min-h-screen -mt-[100vh]" {ui:ref(name: 'item' )}>
+    <div class="home-grid content-grid relative">
+        <div class="home-grid-right flex flex-col justify-center items-start lg:min-h-screen lg:-mt-[100vh] mb-20 lg:m-0" {ui:ref(name: 'item' )}>
+            <ui:image src="EXT:slimstart_dist/Resources/Public/Images/scene-1.jpg" class="mb-8 block lg:hidden" />
             <h3 class="mb-8">Rettungsgerät in Aktion</h3>
             <p class="text-lg">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet sit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
             <ui:button class="mt-8">Mehr erfahren</ui:button>
         </div>
-        <div class="home-grid-right flex flex-col justify-center items-start min-h-screen" {ui:ref(name: 'item' )}>
+        <div class="home-grid-right flex flex-col justify-center items-start lg:min-h-screen mb-20 lg:m-0" {ui:ref(name: 'item' )}>
+            <ui:image src="EXT:slimstart_dist/Resources/Public/Images/scene-2.jpg" class="mb-8 block lg:hidden" />
             <h3 class="mb-8">Rettungsgerät in Aktion</h3>
             <p class="text-lg">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet sit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
             <ui:button class="mt-8">Mehr erfahren</ui:button>
         </div>
-        <div class="home-grid-right flex flex-col justify-center items-start min-h-screen" {ui:ref(name: 'item' )}>
+        <div class="home-grid-right flex flex-col justify-center items-start lg:min-h-screen" {ui:ref(name: 'item' )}>
+            <ui:image src="EXT:slimstart_dist/Resources/Public/Images/scene-3.jpg" class="mb-8 block lg:hidden" />
             <h3 class="mb-8">Rettungsgerät in Aktion</h3>
             <p class="text-lg">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet sit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
             <ui:button class="mt-8">Mehr erfahren</ui:button>

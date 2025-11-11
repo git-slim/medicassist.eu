@@ -3,22 +3,11 @@
 <f:section name="Main">
     <f:render partial="Navigation" arguments="{_all}" />
 
-    <svg width="1151" height="771" viewBox="0 0 1151 771" style="position:absolute;">
-        <defs>
-            <f:comment>
-                <!-- <clipPath id="defi-clip-path" clipPathUnits="objectBoundingBox"> -->
-            </f:comment>
-            <clipPath id="defi-clip-path">
-                <path d="M268.5 176L270.5 175.5L305 170L307.5 169H311.5H870.5L872 169.5L873 170.5L873.5 173.5L874.5 176V179.5L875 595L874.5 599.5L874 603L873.5 605.5L872 608L870 608.5H309.5L269.5 604.5L268 603L267 601.5L267.5 179.5V177.5L268.5 176Z" stroke="black" />
-            </clipPath>
-        </defs>
-    </svg>
-
     <ui:checkmark.root>
         <main id="main" class="content-grid">
             <div class="full-width ce">
-                <div class="home-grid">
-                    <div class="home-grid-left sticky top-0 h-screen flex flex-col justify-center">
+                <div class="home-grid content-grid overflow-hidden lg:overflow-visible">
+                    <div class="home-grid-left lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center -z-10">
                         <div class="relative w-full group" id="defi-wrapper">
                             <f:comment>
                                 <ui:image
@@ -35,13 +24,13 @@
                             </div> -->
                         </div>
                     </div>
-                    <div class="home-grid-right min-h-screen flex flex-col justify-center items-start gap-11">
+                    <div class="home-grid-right lg:min-h-screen flex flex-col justify-center items-start gap-6 lg:gap-11 not-lg:-order-1 not-lg:mt-40">
                         <p class="text-xl text-right self-end">Leben retten mit dem</p>
                         <h1 class="text-h1">All-in-one READY.</h1>
                         <p class="text-xl">Confident. Connected. Care-free.</p>
                         <ui:button>Jetzt kaufen</ui:button>
                     </div>
-                    <ui:checkmark.show class="home-grid-full h-[50vh] mt-[10vh]" offset="{0: 'start end', 1: 'end end'}" />
+                    <ui:checkmark.show class="home-grid-full h-[20vh] lg:h-[50vh] lg:mt-[10vh]" offset="{0: 'start end', 1: 'end end'}" />
 
                     <ui:checkmark.hide class="home-grid-full h-[10vh]" offset="{0: 'start 50%', 1: 'end 50%'}" />
                     <div class="home-grid-full ce col-span-2 ce-spacing-bottom-lg">
@@ -62,8 +51,8 @@
                             13: 'Wartung?'
                         }" />
                         <div class="relative isolate">
-                            <div class="z-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-center max-w-[700px] px-5 py-8">
-                                <div class="-z-10 absolute inset-0 bg-background blur-lg rounded-lg"></div>
+                            <div class="z-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-center max-w-[700px] px-8 py-10">
+                                <div class="-z-10 absolute inset-0 bg-background blur-[20px] rounded-[3rem]"></div>
                                 <h2 class="text-shadow-[0_0_25px_#ff0000,0_0_50px_var(--color-background)]">Mehr Sicherheit. Weniger Sorgen.</h2>
                             </div>
                             <div class="flex flex-col gap-6 bg-background relative">
@@ -87,6 +76,9 @@
                             voluptate Lorem aliqua.
                         </p>
                         <ui:button class="mt-8">Jetzt bestellen</ui:button>
+                        <div class="lg:hidden">
+                            <ui:defi class="w-[115%] max-w-none -ml-[15%] scale-[calc(1151/620)] -mt-20" />
+                        </div>
                     </div>
 
                     <f:variable
@@ -117,12 +109,12 @@
                             </f:for>
                         </div>
                         <ui:checkmark.show offset="{0: 'start start', 1: 'start start'}" />
-                        <div class="h-[115vh]"></div>
+                        <div class="lg:h-[115vh]"></div>
                     </div>
 
-                    <ui:checkmark.hide offset="{0: 'end 70%', 1: 'end 70%'}" />
-                    <div id="hide-check-icons" data-offset="{f:format.json(value: {0: 'end 70%', 1: 'end 70%'})}"></div>
-                    <div class="ce home-grid-full">
+                    <ui:checkmark.hide class="home-grid-full" offset="{0: 'end 70%', 1: 'end 70%'}" />
+                    <div id="hide-check-icons" class="home-grid-full" data-offset="{f:format.json(value: {0: 'end 70%', 1: 'end 70%'})}"></div>
+                    <div class="ce home-grid-full ce-spacing-top-md">
                         <ui:homeVideos.root />
                     </div>
                 </div>

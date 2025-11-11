@@ -15,7 +15,7 @@ import { motionValue, scroll, styleEffect } from 'motion';
 		// TODO: this does not work if we start below where the checkmark would have been shown and hidden, its opacity 1 there at start
 		hideTriggers.forEach(hideTrigger => {
 			scroll(
-				progress => {
+				(progress: number) => {
 					opacity.set(1 - progress);
 				},
 				{
@@ -27,7 +27,7 @@ import { motionValue, scroll, styleEffect } from 'motion';
 
 		showTriggers.forEach(showTrigger => {
 			scroll(
-				progress => {
+				(progress: number) => {
 					opacity.set(progress);
 				},
 				{

@@ -12,7 +12,7 @@ const lenis = new Lenis({
 	const defiWrapper = document.getElementById('defi-wrapper');
 	if (!defiWrapper) return;
 
-	defiWrapper.style.setProperty('--wrapper-w', `${defiWrapper.clientWidth}px`);
+	// defiWrapper.style.setProperty('--wrapper-w', `${defiWrapper.clientWidth}px`);
 
 	const defiSvg = defiWrapper.querySelector('svg')!;
 
@@ -56,7 +56,7 @@ const lenis = new Lenis({
 	// 	r,
 	// });
 
-	const shimmerGradient = document.getElementById('shimmerGradient')!;
+	const shimmerGradient = defiSvg.querySelector('[data-shimmer]')! as SVGLinearGradientElement;
 	shimmerGradient.style.rotate = '10deg';
 
 	const x = motionValue(0);

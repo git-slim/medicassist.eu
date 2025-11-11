@@ -1,5 +1,5 @@
 import { ComponentHydrator, getHydrationData, initAllComponentInstances } from 'fluid-primitives';
-import { animate, spring, scroll, motionValue, styleEffect } from 'motion';
+import { animate, spring, scroll, motionValue, styleEffect, resize } from 'motion';
 
 const NAME = 'home-feature-card';
 
@@ -51,8 +51,16 @@ const NAME = 'home-feature-card';
 
 		styleEffect(iconClone, { opacity });
 
+		resize(({ width }) => {
+			if (width < 900) {
+				iconClone.style.display = 'none';
+			} else {
+				iconClone.style.display = '';
+			}
+		});
+
 		scroll(
-			progress => {
+			(progress: number) => {
 				if (progress === 1) {
 					// animate(iconClone, { opacity: 0 });
 					animate(opacity, 0);
@@ -68,7 +76,7 @@ const NAME = 'home-feature-card';
 		);
 
 		scroll(
-			progress => {
+			(progress: number) => {
 				const svgPoint = getPathPoint(index);
 				const screenCoords = svgPointToScreen(svgPoint);
 
