@@ -1,0 +1,4 @@
+<ui:prop name="offset" type="string[]" default="{0: 'start start', 1: 'end end'}" />
+
+<f:variable name="refData" value="{offset: offset}" />
+<div role="presentation" aria-hidden="true" {ui:ref(name: 'hide' , data: refData )} {f:if(condition: class, then: 'class="{class}"' )} {ui:attributes()}></div>

@@ -15,6 +15,7 @@
         "vite-plugin-typo3": "^2.1.0"
     },
     "dependencies": {
+        "@fontsource-variable/manrope": "^5.2.8",
         "embla-carousel": "^8.6.0",
         "embla-carousel-auto-height": "^8.6.0",
         "embla-carousel-auto-scroll": "^8.6.0",

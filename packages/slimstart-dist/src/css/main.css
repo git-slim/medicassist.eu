@@ -25,11 +25,16 @@
 	}
 
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background text-foreground text-base;
 		min-height: 100vh;
 		min-height: 100dvh;
 		display: flex;
 		flex-direction: column;
+		&:after {
+			@apply fixed inset-0 -z-10;
+			content: '';
+			background: linear-gradient(180deg, #241a43 0%, #120d1f 100%);
+		}
 	}
 
 	main {

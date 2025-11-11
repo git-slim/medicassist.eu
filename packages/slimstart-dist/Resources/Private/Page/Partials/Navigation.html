@@ -2,15 +2,17 @@
 
 <f:variable name="items" value="{
     0: { title: 'Vorteile', href: '' },
-    1: { title: 'Nachteile', href: '' },
-    2: { title: 'Fazit', href: '' },
-    3: { title: 'Jetzt testen', href: '' }
+    1: { title: 'Warum RAEDY?', href: '' },
+    2: { title: 'Plötzlicher Herztod', href: '' },
+    3: { title: 'Über uns', href: '' },
+    4: { title: 'Preise', href: '' },
+    5: { title: 'Kontakt', href: '' },
 }" />
 
 <nav class="content-grid h-(--nav-height) fixed top-0 w-full">
-    <div class="breakout h-full flex items-center gap-10 justify-between">
+    <div class="breakout h-full flex items-center gap-14 justify-between">
         <f:link.typolink parameter="{site.rootPageId}">READY</f:link.typolink>
-        <ul class="flex items-center gap-5">
+        <ul class="flex items-center gap-10">
             <f:for each="{items}" as="item" iteration="i">
                 <li>
                     <f:link.typolink parameter="{item.href}">{item.title}</f:link.typolink>

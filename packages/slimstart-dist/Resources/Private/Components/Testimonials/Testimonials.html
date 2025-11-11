@@ -1,7 +1,7 @@
 <f:variable name="testimonials" value="{
-    0: { text: 'SlimStart hat unsere Erwartungen übertroffen! Die einfache Bedienung und das ansprechende Design machen es zu einem unverzichtbaren Werkzeug für unser Team.', author: 'Anna M.' },
-    1: { text: 'Die Integration von SlimStart in unsere bestehende Infrastruktur war nahtlos. Der Support war hervorragend und hat uns bei jedem Schritt unterstützt.', author: 'Markus T.' },
-    2: { text: 'Wir sind begeistert von den Funktionen, die SlimStart bietet. Es hat unsere Produktivität erheblich gesteigert und die Zusammenarbeit im Team verbessert.', author: 'Sophie L.' },
+    0: { text: 'Occaecat consequat consectetur non non cupidatat eiusmod tempor ipsum magna aliquip id reprehenderit sint proident. Exercitation sit exercitation fugiat velit aute.', author: 'Max Mustermann, Transformation & Implementation, KPMG' },
+    1: { text: 'Ullamco ea fugiat eiusmod aliquip duis sunt dolore velit irure ex sunt ut aute. Aute sit do culpa id ipsum nostrud minim elit excepteur do.', author: 'Markus T.' },
+    2: { text: 'Eu aliquip amet sint consequat minim duis aliqua. Reprehenderit amet laboris commodo sint voluptate aliqua esse commodo nulla amet sit pariatur.', author: 'Sophie L.' },
 }" />
 
 <div {ui:ref(name: 'root' )}>
@@ -17,7 +17,7 @@
             <f:for each="{testimonials}" as="testimonial" iteration="i">
                 <ui:carousel.item>
                     <div class="text-center max-w-[650px] mx-auto">
-                        <p class="text-h4 mb-8">"{testimonial.text}"</p>
+                        <p class="text-lg mb-8">"{testimonial.text}"</p>
                         <p class="font-bold">{testimonial.author}</p>
                     </div>
                 </ui:carousel.item>

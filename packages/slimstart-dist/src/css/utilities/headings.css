@@ -1,29 +1,29 @@
 @utility h1 {
-	font-weight: 600;
+	font-weight: 700;
 	font-family: var(--font-heading);
 	@apply text-h1;
 }
 
 @utility h2 {
-	font-weight: 600;
+	font-weight: 700;
 	font-family: var(--font-heading);
 	@apply text-h2;
 }
 
 @utility h3 {
-	font-weight: 600;
+	font-weight: 700;
 	font-family: var(--font-heading);
 	@apply text-h3;
 }
 
 @utility h4 {
-	font-weight: 600;
+	font-weight: 700;
 	font-family: var(--font-heading);
 	@apply text-h4;
 }
 
 @utility h5 {
-	font-weight: 600;
+	font-weight: 700;
 	font-family: var(--font-heading);
 	@apply text-h5;
 }

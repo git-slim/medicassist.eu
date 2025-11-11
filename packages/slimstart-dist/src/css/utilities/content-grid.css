@@ -86,7 +86,7 @@
 			minmax(0, calc(var(--content-max-width) / 2))
 			minmax(0, calc(var(--content-max-width) / 2))
 			1fr;
-		column-gap: --spacing(20);
+		column-gap: --spacing(30);
 	}
 
 	.home-grid-left {

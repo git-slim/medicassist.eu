@@ -1,14 +1,18 @@
 <ui:cn value="
     cta-gradient text-white rounded-tr-md 
-    py-2 px-5 
-    inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all shrink-0 
+    py-2 px-5
+    inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all ease-out shrink-0 
     disabled:pointer-events-none disabled:opacity-50 
-    [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 
+    [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-3 [&_svg]:shrink-0 
     outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] 
     aria-invalid:ring-destructive/20 aria-invalid:border-destructive 
+    active:scale-[0.97]
     {class}
 " as="class" />
 
 <button class="{class}" {ui:attributes()}>
     <f:slot />
+    <svg aria-hidden="true" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 7.22222L1.57212 6.38519L3.31974 9.67778L10.6314 0L12 1.04074L3.05835 13L0 7.22222Z" fill="white" />
+    </svg>
 </button>

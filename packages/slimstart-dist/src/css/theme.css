@@ -1,6 +1,6 @@
 @theme {
 	--font-*: initial;
-	--font-text: 'YOUR_FONT', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-text: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	--font-heading: var(--font-text);
 
 	--color-*: initial;
@@ -27,19 +27,21 @@
 
 	--text-*: initial;
 	--text-sm: 0.875rem;
-	--text-sm--line-height: calc(1.25 / 0.875);
-	--text-base: 1rem;
-	--text-base--line-height: calc(1.5 / 1);
-	--text-lg: 1.125rem;
-	--text-lg--line-height: calc(1.75 / 1.125);
+	--text-sm--line-height: 1.4;
+	--text-base: 1.125rem;
+	--text-base--line-height: 1.4;
+	--text-lg: 1.375rem;
+	--text-lg--line-height: 1.4;
+	--text-xl: 1.875rem;
+	--text-xl--line-height: 1.4;
 	--text-h5: 1.25rem;
-	--text-h5--line-height: calc(1.75 / 1.25);
+	--text-h5--line-height: 1.1;
 	--text-h4: 1.5rem;
-	--text-h4--line-height: calc(2 / 1.5);
+	--text-h4--line-height: 1.1;
 	--text-h3: 1.875rem;
-	--text-h3--line-height: calc(2.25 / 1.875);
-	--text-h2: 3rem;
-	--text-h2--line-height: calc(3 / 3);
+	--text-h3--line-height: 1.1;
+	--text-h2: 3.15rem;
+	--text-h2--line-height: 1.1;
 	--text-h1: 6rem;
 	--text-h1--line-height: 1;
 
@@ -49,8 +51,8 @@
 :root {
 	--nav-height: 90px;
 
-	--ce-spacing-lg: 9rem;
-	--ce-spacing-md: 6rem;
+	--ce-spacing-lg: 14rem;
+	--ce-spacing-md: 10rem;
 	--ce-spacing-sm: 3.5rem;
 	--ce-anchor-offset: calc(var(--nav-height, 90px) + 10px);
 
