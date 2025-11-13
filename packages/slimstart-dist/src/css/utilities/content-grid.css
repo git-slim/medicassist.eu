@@ -1,7 +1,7 @@
 @utility content-grid {
-	--content-padding-inline: 1rem;
+	--content-padding-inline: 1.5rem;
 	@variant md {
-		--content-padding-inline: 2rem;
+		--content-padding-inline: 2.5rem;
 	}
 	--content-max-width: 1240px;
 	--content-breakout-size: 200px;

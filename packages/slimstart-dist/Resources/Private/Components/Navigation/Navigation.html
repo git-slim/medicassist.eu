@@ -1,0 +1,97 @@
+<f:variable name="items" value="{
+    0: { title: 'Vorteile', href: '#' },
+    1: { title: 'Warum RAEDY?', href: '#' },
+    2: { title: 'Plötzlicher Herztod', href: '#' },
+    3: { title: 'Über uns', href: '#' },
+    4: { title: 'Preise', href: '#' },
+    5: { title: 'Kontakt', href: '#' },
+}" />
+
+<a href="#main" class="sr-only focus:not-sr-only top-4 right-4 p-1 rounded-sm">Zum Hauptinhalt springen</a>
+<nav class="content-grid h-(--nav-height) fixed top-0 w-full z-10 pe-(--scrollbar-width,0px)" {ui:ref(name: 'root' )}>
+    <div class="breakout h-full flex items-center gap-14 justify-between">
+        <f:render section="mainlink" />
+        <ul class="hidden items-center gap-10 lg:flex">
+            <f:for each="{items}" as="item" iteration="i">
+                <li>
+                    <f:link.typolink parameter="{item.href}">{item.title}</f:link.typolink>
+                </li>
+            </f:for>
+        </ul>
+        <button class="hidden lg:block focus-ring">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+            </svg>
+        </button>
+        <primitives:dialog.root controlled="{true}" rootId="nav-drawer-{rootId}">
+            <primitives:dialog.trigger asChild="{true}">
+                <button class="lg:hidden focus-ring data-[state=open]:hidden peer z-1">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+                        <path d="M4 5h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 19h16"></path>
+                    </svg>
+                    <span class="sr-only">Menü öffnen</span>
+                </button>
+            </primitives:dialog.trigger>
+            <primitives:dialog.closeTrigger asChild="{true}">
+                <button class="lg:hidden focus-ring hidden peer-data-[state=open]:block z-1" data-persistent>
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+                        <path d="M4 5h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 19h16"></path>
+                    </svg>
+                    <span class="sr-only">Menü schließen</span>
+                </button>
+            </primitives:dialog.closeTrigger>
+            <primitives:dialog.backdrop class="{ui:cn(value: '
+                fixed left-0 right-0 bottom-0 top-0 bg-black/50 
+                transition-all ease-[cubic-bezier(.17,.42,0,1)] duration-400 transition-discrete 
+                starting:data-[state=open]:opacity-0 starting:data-[state=open]:backdrop-blur-none
+                data-[state=closed]:opacity-0 data-[state=closed]:backdrop-blur-none
+                data-[state=open]:opacity-100 data-[state=open]:backdrop-blur-xs
+            ')}" />
+            <primitives:dialog.positioner class="fixed left-0 right-0 bottom-0 top-0 flex items-end justify-end">
+                <primitives:dialog.content class="{ui:cn(value: '
+                    bg-background text-foreground h-full shadow-lg w-full pt-(--nav-height)
+                    transition-all ease-[cubic-bezier(.17,.42,0,1)] duration-400 transition-discrete 
+                    starting:data-[state=open]:-translate-x-full starting:data-[state=open]:blur-[0px]
+                    data-[state=closed]:-translate-x-full data-[state=closed]:blur-[0px]
+                    data-[state=open]:translate-x-0 data-[state=open]:blur-0
+                    isolate
+                ')}">
+                    <ui:scrollArea.root class="h-full">
+                        <ui:scrollArea.viewport>
+                            <ui:scrollArea.content class="mx-(--content-padding-inline) my-6">
+                                <ul class="flex flex-col gap-6">
+                                    <f:for each="{items}" as="item" iteration="i">
+                                        <li>
+                                            <f:link.typolink parameter="{item.href}">{item.title}</f:link.typolink>
+                                        </li>
+                                    </f:for>
+                                </ul>
+                            </ui:scrollArea.content>
+                        </ui:scrollArea.viewport>
+                        <ui:scrollArea.scrollbar>
+                            <ui:scrollArea.thumb />
+                        </ui:scrollArea.scrollbar>
+                    </ui:scrollArea.root>
+                </primitives:dialog.content>
+            </primitives:dialog.positioner>
+        </primitives:dialog.root>
+
+    </div>
+</nav>
+
+<f:section name="mainlink">
+    <a href="/" data-persistent class="z-1">
+        <ui:logoRaedy class="h-8 w-auto translate-y-1" aria-hidden="true" />
+        <span class="sr-only">
+            RAEDY
+        </span>
+    </a>
+</f:section>
+
+<vite:asset extension="slimstart_dist" entry="Resources/Private/Components/Navigation/Navigation.entry.ts" />

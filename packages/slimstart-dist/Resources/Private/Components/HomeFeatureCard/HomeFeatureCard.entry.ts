@@ -4,7 +4,7 @@ import { animate, spring, scroll, motionValue, styleEffect, resize } from 'motio
 const NAME = 'home-feature-card';
 
 (() => {
-	const checkmarkPath = document.querySelector<SVGPathElement>('#checkmark-path-inner');
+	const checkmarkPath = document.querySelector<SVGPathElement>('[data-defi-checkmark-inner]');
 	if (!checkmarkPath) return;
 
 	const svg = checkmarkPath.ownerSVGElement!;

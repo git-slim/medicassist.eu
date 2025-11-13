@@ -5,7 +5,7 @@ import { motionValue, scroll, styleEffect } from 'motion';
 	initAllComponentInstances('checkmark', ({ props }) => {
 		const hydrator = new ComponentHydrator('checkmark', props.id, props.ids);
 
-		const checkmark = document.getElementById('checkmark');
+		const checkmark = document.querySelector('[data-defi-checkmark]');
 		const showTriggers = hydrator.getElements('show');
 		const hideTriggers = hydrator.getElements('hide');
 

@@ -1,0 +1,13 @@
+<ui:useProps name="primitives:scrollArea.scrollbar" />
+
+<primitives:scrollArea.scrollbar
+    spreadProps="{true}"
+    class="{ui:cn(value: '
+        flex justify-center w-2 rounded-sm opacity-0 transition-opacity
+        data-[hover]:opacity-100 data-[dragging]:opacity-100 data-[scrolling]:opacity-100 peer-focus-visible:opacity-100
+        data-[orientation=vertical]:not-[[data-overflow-y]]:hidden
+        data-[orientation=horizontal]:not-[[data-overflow-x]]:hidden
+        {class}
+    ')}">
+    <f:slot />
+</primitives:scrollArea.scrollbar>

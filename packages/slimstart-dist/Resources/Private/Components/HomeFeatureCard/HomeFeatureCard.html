@@ -1,12 +1,13 @@
 <ui:prop name="title" type="string" />
 <ui:prop name="description" type="string" />
+<ui:prop name="icon" type="string" />
 
-<div class="cta-gradient p-5 grid grid-cols-[calc(var(--spacing)*15)_1fr] gap-6 rounded-tr-lg" {ui:ref(name: 'root' )}>
-    <div {ui:ref(name: 'icon' )} class="relative flex justify-center size-15 *:[svg]:size-30 *:[svg]:absolute *:[svg]:left-1/2 *:[svg]:top-[calc(50%+(var(--spacing)*2))] *:[svg]:-translate-x-1/2 *:[svg]:-translate-y-1/2" aria-hidden="true">
-        <ui:icon.feature.247 />
+<div class="cta-gradient p-5 grid grid-cols-1 md:grid-cols-[calc(var(--spacing)*15)_1fr] gap-6 rounded-tr-lg" {ui:ref(name: 'root' )}>
+    <div {ui:ref(name: 'icon' )} class="relative flex justify-center size-15 *:[svg]:size-30 *:[svg]:absolute *:[svg]:left-1/2 *:[svg]:top-1/2 md:*:[svg]:top-[calc(50%+(var(--spacing)*2))] *:[svg]:-translate-x-1/2 *:[svg]:-translate-y-1/2 not-md:ms-3 not-md:mt-3" aria-hidden="true">
+        <f:format.raw>{icon}</f:format.raw>
     </div>
-    <div class="col-start-2 flex flex-col items-start gap-5">
-        <h3>{title}</h3>
+    <div class="md:col-start-2 flex flex-col items-start gap-5">
+        <h3 class="h4">{title}</h3>
         <p>{description}</p>
         <ui:button class="mt-2">Mehr erfahren</ui:button>
     </div>

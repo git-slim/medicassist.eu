@@ -12,7 +12,8 @@ const lenis = new Lenis({
 	const defiWrapper = document.getElementById('defi-wrapper');
 	if (!defiWrapper) return;
 
-	// defiWrapper.style.setProperty('--wrapper-w', `${defiWrapper.clientWidth}px`);
+	defiWrapper.style.setProperty('--wrapper-w-px', `${defiWrapper.clientWidth}px`);
+	defiWrapper.style.setProperty('--wrapper-w', `${defiWrapper.clientWidth}`);
 
 	const defiSvg = defiWrapper.querySelector('svg')!;
 

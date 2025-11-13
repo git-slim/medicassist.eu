@@ -53,10 +53,10 @@
 	}
 
 	&.ce-spacing-top-md {
-		--ce-spacing-top: var(--ce-spacing-sm);
+		--ce-spacing-top: var(--ce-spacing-md);
+		/* --ce-spacing-top: var(--ce-spacing-sm);
 		@variant md {
-			--ce-spacing-top: var(--ce-spacing-md);
-		}
+		} */
 	}
 	&.ce-spacing-bottom-md {
 		--ce-spacing-bottom: var(--ce-spacing-sm);
