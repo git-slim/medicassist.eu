@@ -1,14 +1,14 @@
 <div class="relative">
-    <div class="sticky top-0 h-screen w-full pointer-events-none -z-10 hidden lg:block">
+    <div class="sticky top-0 h-screen w-full pointer-events-none -z-10 hidden lg:block lg:mt-[-100vh]">
         <ui:homeVideos.video src="{f:uri.resource(path:'EXT:slimstart_dist/Resources/Public/Videos/video1.mp4')}" title="Video 1" />
         <ui:homeVideos.video src="{f:uri.resource(path:'EXT:slimstart_dist/Resources/Public/Videos/video2.mp4')}" title="Video 2" />
         <f:comment>
             <ui:homeVideos.video src="{f:uri.resource(path:'EXT:slimstart_dist/Resources/Public/Videos/video3.mp4')}" title="Video 3" />
         </f:comment>
-        <div role="presentation" class="absolute inset-0 size-full bg-[#1B142FB2] backdrop-blur-md"></div>
+        <div role="presentation" class="absolute inset-0 size-full backdrop-blur-md"></div>
     </div>
     <div class="home-grid content-grid relative space-y-20 lg:space-y-0">
-        <div class="home-grid-right flex flex-col justify-center items-start lg:min-h-screen lg:-mt-[100vh]" {ui:ref(name: 'item' )}>
+        <div class="home-grid-right flex flex-col justify-center items-start lg:min-h-screen" {ui:ref(name: 'item' )}>
             <ui:image src="EXT:slimstart_dist/Resources/Public/Images/scene-1.jpg" class="mb-8 block lg:hidden" />
             <h3 class="mb-10">Egal ob im Büro, öffentlichen Bereichen oder im Verein – immer erreichbar, wenn es darauf ankommt. </h3>
             <ui:button>Jetzt bestellen</ui:button>

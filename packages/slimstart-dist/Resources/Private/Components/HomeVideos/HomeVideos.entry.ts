@@ -11,18 +11,11 @@ import { animate, scroll } from 'motion';
 
 		items.forEach((item, index) => {
 			const video = videos[index];
-			const isFirstVideo = index === 0;
 
 			scroll(
 				animate(video, {
-					opacity: [isFirstVideo ? 1 : 0, 1, 1, 0],
-					// opacity: [0, 1, 1, 0],
-					filter: [
-						isFirstVideo ? 'blur(0px)' : 'blur(8px)',
-						'blur(0px)',
-						'blur(0px)',
-						'blur(8px)',
-					],
+					opacity: [0, 0.3, 0.3, 0],
+					filter: ['blur(8px)', 'blur(0px)', 'blur(0px)', 'blur(8px)'],
 				}),
 				{
 					target: item,
