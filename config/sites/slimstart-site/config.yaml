@@ -18,6 +18,17 @@ languages:
     flag: de
     hreflang: de-DE
     websiteTitle: ''
+  - title: English
+    enabled: true
+    locale: en_US.utf8
+    hreflang: ''
+    base: /en
+    websiteTitle: ''
+    navigationTitle: English
+    fallbackType: strict
+    fallbacks: ''
+    flag: en-us-gb
+    languageId: 1
 rootPageId: 1
 settings:
   redirects:
