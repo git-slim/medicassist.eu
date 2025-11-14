@@ -1,4 +1,4 @@
-<ui:prop name="items" type="string[]" />
+<ui:prop name="items" type="array" />
 <ui:prop name="direction" type="string" default="forward" client="{true}" />
 
 <div class="{ui:cn(value: '{class}' )}" {ui:ref(name: 'root' )}>
@@ -21,8 +21,8 @@
 
 <f:section name="item">
     <ui:carousel.item aria-hidden="{f:if(condition: ariaHidden, then: 'true', else: 'false')}">
-        <div class="px-6 py-3 rounded-full border border-white">
-            {item}
+        <div class="{ui:cn(value: 'px-6 py-3 rounded-full cta-gradient', when: '{\'glow-text font-bold\': item.highlight}')}">
+            {item.title}
         </div>
     </ui:carousel.item>
 </f:section>

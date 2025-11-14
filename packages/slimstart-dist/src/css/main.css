@@ -8,6 +8,7 @@
 @import './utilities/clickable-area.css';
 @import './utilities/carousel.css';
 @import './utilities/gradient.css';
+@import './utilities/glow-text.css';
 @import './components/ce.css' layer(components);
 @import './components/rte.css' layer(components);
 
@@ -33,7 +34,7 @@
 		&:after {
 			@apply fixed inset-0 -z-10;
 			content: '';
-			background: linear-gradient(180deg, #241a43 0%, #120d1f 100%);
+			background: linear-gradient(180deg, #221d31 0%, #1b1823 100%);
 		}
 	}
 

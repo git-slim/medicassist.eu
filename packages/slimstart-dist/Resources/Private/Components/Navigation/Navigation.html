@@ -1,20 +1,13 @@
-<f:variable name="items" value="{
-    0: { title: 'Vorteile', href: '#' },
-    1: { title: 'Warum RAEDY?', href: '#' },
-    2: { title: 'Plötzlicher Herztod', href: '#' },
-    3: { title: 'Über uns', href: '#' },
-    4: { title: 'Preise', href: '#' },
-    5: { title: 'Kontakt', href: '#' },
-}" />
+<ui:prop name="items" type="array" />
 
 <a href="#main" class="sr-only focus:not-sr-only top-4 right-4 p-1 rounded-sm">Zum Hauptinhalt springen</a>
-<nav class="content-grid h-(--nav-height) fixed top-0 w-full z-10 pe-(--scrollbar-width,0px)" {ui:ref(name: 'root' )}>
+<nav class="content-grid h-(--nav-height) fixed top-0 w-full z-10 pe-(--scrollbar-width,0px) bg-[linear-gradient(180deg,#1B1823_0%,rgba(34,29,49,0.8)_69.71%,rgba(34,29,49,0)_100%)]" {ui:ref(name: 'root' )}>
     <div class="breakout h-full flex items-center gap-14 justify-between">
         <f:render section="mainlink" />
         <ul class="hidden items-center gap-10 lg:flex">
             <f:for each="{items}" as="item" iteration="i">
                 <li>
-                    <f:link.typolink parameter="{item.href}">{item.title}</f:link.typolink>
+                    <a class="aria-[current=page]:font-bold" href="{item.link}" {f:if(condition: item.active, then: 'aria-current="page"' )}>{item.title}</a>
                 </li>
             </f:for>
         </ul>
@@ -68,7 +61,7 @@
                                 <ul class="flex flex-col gap-6">
                                     <f:for each="{items}" as="item" iteration="i">
                                         <li>
-                                            <f:link.typolink parameter="{item.href}">{item.title}</f:link.typolink>
+                                            <a class="aria-[current=page]:font-bold" href="{item.link}" {f:if(condition: item.active, then: 'aria-current="page"' )}>{item.title}</a>
                                         </li>
                                     </f:for>
                                 </ul>
@@ -87,7 +80,7 @@
 
 <f:section name="mainlink">
     <a href="/" data-persistent class="z-1">
-        <ui:logoRaedy class="h-8 w-auto translate-y-1" aria-hidden="true" />
+        <ui:logo.raedy class="h-8 w-auto -translate-y-1" aria-hidden="true" />
         <span class="sr-only">
             RAEDY
         </span>
