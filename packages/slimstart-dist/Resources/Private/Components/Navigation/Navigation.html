@@ -40,10 +40,10 @@
             </f:comment>
         </div>
         <primitives:dialog.root controlled="{true}" rootId="nav-drawer-{rootId}">
-            <div class="grid *:col-start-1 *:row-start-1">
+            <div class="lg:hidden grid *:col-start-1 *:row-start-1">
                 <primitives:dialog.trigger asChild="{true}">
                     <button class="{ui:cn(value: '
-                        lg:hidden focus-ring data-[state=open]:hidden peer z-1 
+                        focus-ring data-[state=open]:hidden peer z-1 
                         transition-all ease-out duration-300 transition-discrete
                         starting:data-[state=closed]:opacity-0 starting:data-[state=closed]:scale-90 starting:data-[state=closed]:blur-[2px]
                         data-[state=open]:opacity-0 data-[state=open]:scale-90 data-[state=open]:blur-[2px]
@@ -59,7 +59,7 @@
                 </primitives:dialog.trigger>
                 <primitives:dialog.closeTrigger asChild="{true}">
                     <button class="{ui:cn(value: '
-                        lg:hidden focus-ring hidden peer-data-[state=open]:block z-1
+                        focus-ring hidden peer-data-[state=open]:block z-1
                         transition-all ease-out duration-300 transition-discrete
                         starting:peer-data-[state=open]:opacity-0 starting:peer-data-[state=open]:scale-90 starting:peer-data-[state=open]:blur-[2px]
                         peer-data-[state=closed]:opacity-0 peer-data-[state=closed]:scale-90 peer-data-[state=closed]:blur-[2px]
