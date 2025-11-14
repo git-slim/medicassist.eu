@@ -75,12 +75,12 @@
                             </div>
                             <div class="flex flex-col gap-6 bg-background relative">
                                 <div class="absolute bottom-full left-0 w-full h-60 bg-linear-to-t from-background to-transparent from-10%"></div>
-                                <ui:marquee items="{items}" class="[--item-spacing:2rem]" direction="backward" />
-                                <ui:marquee items="{items}" class="[--item-spacing:2rem]" direction="forward" />
-                                <ui:marquee items="{items}" class="[--item-spacing:2rem]" direction="backward" />
-                                <ui:marquee items="{items}" class="[--item-spacing:2rem]" direction="forward" />
-                                <ui:marquee items="{items}" class="[--item-spacing:2rem]" direction="backward" />
-                                <ui:marquee items="{items}" class="[--item-spacing:2rem]" direction="forward" />
+                                <ui:marquee items="{items}" class="[--item-spacing:2rem] w-full max-w-[2000px] mx-auto mask-x-from-65% mask-x-to-100%" direction="backward" />
+                                <ui:marquee items="{items}" class="[--item-spacing:2rem] w-full max-w-[2000px] mx-auto mask-x-from-75% mask-x-to-100%" direction="forward" />
+                                <ui:marquee items="{items}" class="[--item-spacing:2rem] w-full max-w-[2000px] mx-auto mask-x-from-85% mask-x-to-100%" direction="backward" />
+                                <ui:marquee items="{items}" class="[--item-spacing:2rem] w-full max-w-[2000px] mx-auto mask-x-from-85% mask-x-to-100%" direction="forward" />
+                                <ui:marquee items="{items}" class="[--item-spacing:2rem] w-full max-w-[2000px] mx-auto mask-x-from-75% mask-x-to-100%" direction="backward" />
+                                <ui:marquee items="{items}" class="[--item-spacing:2rem] w-full max-w-[2000px] mx-auto mask-x-from-65% mask-x-to-100%" direction="forward" />
                                 <div class="absolute top-full left-0 w-full h-60 bg-linear-to-b from-background to-transparent from-10%"></div>
                             </div>
                         </div>
@@ -95,6 +95,18 @@
                         <div class="lg:hidden flex justify-end">
                             <ui:defi class="w-[115%] -ml-[15%] scale-[calc(1151/620)] not-sm:-mt-20 min-w-[500px] sm:min-w-[750px] max-w-[800px]" />
                         </div>
+                    </div>
+
+                    <div class="ce home-grid-right">
+                        <ui:compareTable items="{
+                            0: { title: 'Defibrillator (AED)' },
+                            1: { title: 'Funküberwachung' },
+                            2: { title: 'Entnahmealarm und Verbindung zum Notruf' },
+                            3: { title: 'Übernahme Betreiberpflichten' },
+                            4: { title: 'Sichere Aufbewahrung' },
+                            5: { title: 'Wartung & Updates' },
+                            6: { title: 'Rundum sorglos. Rund um die Uhr.' },
+                        }" />
                     </div>
 
                     <f:variable
@@ -114,7 +126,7 @@
                         <p>
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet sit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet sit.
                         </p>
-                        <div class="flex flex-col gap-15 mt-16">
+                        <div class="flex flex-col gap-38 mt-16">
                             <f:for each="{features}" as="feature" iteration="i">
                                 <ui:homeFeatureCard
                                     title="{feature.title}"
@@ -122,12 +134,13 @@
                                     icon="{feature.icon}" />
                             </f:for>
                         </div>
-                        <ui:checkmark.show offset="{0: 'start start', 1: 'start start'}" />
-                        <div class="lg:h-[115vh]"></div>
+                        <ui:checkmark.show offset="{0: 'start 5%', 1: 'start 5%'}" />
+                        <div class="lg:h-[80vh]"></div>
                     </div>
 
                     <ui:checkmark.hide class="home-grid-full" offset="{0: 'end 70%', 1: 'end 70%'}" />
                     <div id="hide-check-icons" class="home-grid-full" data-offset="{f:format.json(value: {0: 'end 70%', 1: 'end 70%'})}"></div>
+
                     <div class="ce home-grid-full ce-spacing-top-md">
                         <ui:homeVideos.root />
                     </div>

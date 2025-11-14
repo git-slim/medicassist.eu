@@ -1,3 +1,4 @@
+import { lenis } from '@/Main.entry';
 import { ComponentHydrator, getHydrationData, initAllComponentInstances } from 'fluid-primitives';
 import { animate, spring, scroll, motionValue, styleEffect, resize } from 'motion';
 
@@ -32,6 +33,12 @@ const NAME = 'home-feature-card';
 		const rootEl = hydrator.getElement('root');
 		const iconEl = hydrator.getElement<SVGElement>('icon');
 		if (!rootEl || !iconEl) return;
+
+		rootEl.addEventListener('click', () => {
+			lenis.scrollTo(rootEl as HTMLElement, {
+				offset: (window.innerHeight / 2 - rootEl.clientHeight / 2) * -1,
+			});
+		});
 
 		const index = cardIds.indexOf(props.id);
 
@@ -114,6 +121,18 @@ const NAME = 'home-feature-card';
 			{
 				target: rootEl,
 				offset: ['start start', 'start start'],
+			}
+		);
+
+		scroll(
+			animate(rootEl, {
+				opacity: [0.3, 1, 1, 0.3],
+				scale: [0.9, 1, 1, 0.9],
+				filter: ['blur(5px)', 'blur(0px)', 'blur(0px)', 'blur(5px)'],
+			}),
+			{
+				target: rootEl,
+				offset: ['start 90%', 'start 52.5%', 'end 47.5%', 'end 10%'],
 			}
 		);
 	});

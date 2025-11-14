@@ -4,7 +4,7 @@ import 'lenis/dist/lenis.css';
 import Lenis from 'lenis';
 import { animate, attrEffect, mapValue, motionValue, svgEffect, transformValue } from 'motion';
 
-const lenis = new Lenis({
+export const lenis = new Lenis({
 	autoRaf: true,
 });
 
@@ -66,9 +66,9 @@ const lenis = new Lenis({
 	svgEffect(shimmerGradient, {
 		gradientTransform,
 	});
-	x.on('change', latest => {
-		console.log({ latest });
-	});
+	// x.on('change', latest => {
+	// 	console.log({ latest });
+	// });
 
 	setTimeout(() => {
 		animate(
