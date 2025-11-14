@@ -1,29 +1,28 @@
 name: medicassist.eu
 type: typo3
 docroot: public
-php_version: "8.3"
+php_version: '8.3'
 webserver_type: apache-fpm
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns:
-    - medicassist.dev
+  - medicassist.dev
 database:
-    type: mariadb
-    version: "10.11"
+  type: mariadb
+  version: '10.11'
 webimage_extra_packages: [inkscape]
 use_dns_when_possible: true
-composer_version: "2"
+composer_version: '2'
 web_environment:
-    - TYPO3_CONTEXT=Development
-    - SLIMSTART_GITHUB_TOKEN=${SLIMSTART_GITHUB_TOKEN}
-    - COMPOSER_AUTH={\"github-oauth\":{\"github.com\":\"${SLIMSTART_GITHUB_TOKEN}\"}}
+  - TYPO3_CONTEXT=Development
+  - SLIMSTART_GITHUB_TOKEN=${SLIMSTART_GITHUB_TOKEN}
+  - COMPOSER_AUTH={\"github-oauth\":{\"github.com\":\"${SLIMSTART_GITHUB_TOKEN}\"}}
 corepack_enable: false
-nodejs_version: "22"
+nodejs_version: '22'
 hooks:
   post-start:
-    - exec: "composer i"
-    - exec: "cd packages/slimstart-dist && npm i && npm run build"
-
+    - exec: 'composer i'
+    - exec: 'npm i && npm run build'
 # Key features of DDEV's config.yaml:
 
 # name: <projectname> # Name of the project, automatically provides
@@ -70,7 +69,7 @@ hooks:
 
 # host_xhgui_port: 8142
 # Can be used to change the host binding port of the xhgui
-# application. Rarely used; only when port conflict and 
+# application. Rarely used; only when port conflict and
 # bind_all_ports is used (normally with router disabled)
 
 # xhprof_enabled: false  # Set to true to enable Xhprof and "ddev start" or "ddev restart"

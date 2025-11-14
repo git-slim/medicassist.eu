@@ -6,3 +6,5 @@ nbproject
 /vendor
 /public/*
 !/public/.htaccess
+node_modules
+**/*/Resources/Public/Build

@@ -25,14 +25,14 @@
         "noUncheckedSideEffectImports": true,
 
         "paths": {
-            "@/*": ["./src/js/*"]
+            "@/*": ["./packages/slimstart-dist/src/js/*"]
         }
     },
     "exclude": [],
     "include": [
         "module.d.ts",
-        "src",
-        "ContentBlocks/ContentElements/*/source/*",
-        "Resources/Private/Components/**/*"
+        "packages/*/src",
+        "packages/*/ContentBlocks/ContentElements/*/source/*",
+        "packages/*/Resources/Private/Components/**/*"
     ]
 }

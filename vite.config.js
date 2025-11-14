@@ -50,11 +50,11 @@ const config = {
 	],
 	resolve: {
 		alias: {
-			'@': resolve(__dirname, './src/js'),
+			'@': resolve(__dirname, 'packages', 'slimstart-dist', './src/js'),
 		},
 	},
 	build: {
-		outDir: resolve(__dirname, 'Resources', 'Public', 'Build'),
+		outDir: resolve(__dirname, 'packages', 'slimstart-dist', 'Resources', 'Public', 'Build'),
 		rollupOptions: {
 			output: {
 				assetFileNames: assetInfo => {

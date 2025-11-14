@@ -2,15 +2,13 @@
 .circleci
 .vscode
 node_modules
-src
+packages/slimstart-dist/src
 .editorconfig
-.fantasticonrc.js
 .gitignore
 .prettierrc
 exclude.txt
 package-lock.json
 package.json
-postcss.config.js
 README.md
 tsconfig.json
 vite.config.js

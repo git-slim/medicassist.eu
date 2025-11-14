@@ -1,0 +1,156 @@
+version: 2.1
+
+executors:
+  node_executor:
+    docker:
+      - image: cimg/node:23.8.0
+    working_directory: ~/project
+
+jobs:
+  install_dependencies:
+    executor: node_executor
+    steps:
+      - checkout
+      - run:
+          name: Install Node.js dependencies
+          command: npm ci
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - node_modules
+  build_frontend:
+    executor: node_executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Build Frontend
+          command: npm run build
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - packages/slimstart-dist/Resources/Public/Build
+  deploy:
+    executor: node_executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - add_ssh_keys:
+          fingerprints:
+            - 'SHA256' # TODO
+      - run:
+          name: SSH connection
+          command: |
+            sudo mkdir -p ~/.ssh
+            sudo chmod 700 ~/.ssh
+            sudo ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+            sudo chmod 644 ~/.ssh/known_hosts
+      - run:
+          name: Update packages && install rsync and gettext
+          command: |
+            sudo apt-get update && sudo apt install rsync && sudo apt install gettext
+      - run:
+          name: Copy files to server
+          command: |
+            ssh $SERVER_USER@$SERVER_IP "mkdir -p $SERVER_PATH/next"
+            rsync -av --progress --exclude-from="exclude.txt" ~/project/ $SERVER_USER@$SERVER_IP:$SERVER_PATH/next/
+      - run:
+          name: Install Composer
+          command: ssh $SERVER_USER@$SERVER_IP "cd $SERVER_PATH/next && composer install --no-dev"
+      - run:
+          name: Backup database
+          command: |
+            ssh $SERVER_USER@$SERVER_IP "
+              echo -e '[mysqldump]\nuser=$DB_USERNAME\npassword=$DB_PASSWORD\nhost=$DB_HOST' > $SERVER_PATH/.my.cnf
+              cd $SERVER_PATH/acv_core && mysqldump --defaults-extra-file=$SERVER_PATH/.my.cnf --no-tablespaces $DB_DATABASE > db_snapshot.sql
+            "
+      - run:
+          name: Smoke test
+          command: |
+            RESPONSE=$(curl -s -L -w "\nHTTP_STATUS=%{http_code}" $APP_URL)
+            echo "$RESPONSE" > response.log
+            STATUS_CODE=$(echo "$RESPONSE" | grep "HTTP_STATUS" | cut -d= -f2)
+
+            if [ "$STATUS_CODE" -eq 200 ]; then
+              echo "✅ App is running!"
+            else
+              echo "❌ App is not reachable! Status Code: $STATUS_CODE"
+              echo "🔍 Response body:"
+              cat response.log
+              exit 1
+            fi
+      - store_artifacts:
+          path: response.log
+      - run:
+          name: Rename current folder to previous
+          command: |
+            TIMESTAMP=$(date +"%Y%m%d%H%M%S")
+            ssh $SERVER_USER@$SERVER_IP "mv $SERVER_PATH/current $SERVER_PATH/previous_$TIMESTAMP"
+      - run:
+        name: Delete old versions
+        command: |
+          ssh $SERVER_USER@$SERVER_IP "
+            set -e
+            mkdir -p $SERVER_PATH/.old
+            OLD_DIRS=\$(ls -1dt $SERVER_PATH/previous_* 2>/dev/null | tail -n +4)
+
+            for DIR in \$OLD_DIRS; do
+              echo \"Deleting old folder: \$DIR\"
+              rm -rf \"\$DIR\"
+            done
+          "
+      - run:
+          name: Rename next folder to current
+          command: ssh $SERVER_USER@$SERVER_IP "mv $SERVER_PATH/next $SERVER_PATH/current"
+      - run:
+          name: Clear Cache
+          command: |
+            ssh $SERVER_USER@$SERVER_IP "
+              $SERVER_PATH/../vendor/bin/typo3 cache:flush
+            "
+      - run:
+          name: Run DB Migration
+          command: |
+            ssh $SERVER_USER@$SERVER_IP "
+              $SERVER_PATH/../vendor/bin/typo3 database:updateschema \"*.add,*.change\" -vv || true
+            "
+      - run:
+          name: Cache Warmup
+          command: |
+            ssh $SERVER_USER@$SERVER_IP "
+              $SERVER_PATH/../vendor/bin/typo3 cache:warmup
+            "
+
+workflows:
+  build:
+    jobs:
+      - install_dependencies:
+          name: Install Dependencies
+          filters:
+            branches:
+              only: [main, staging]
+      - build_frontend:
+          name: Build Frontend
+          requires:
+            - Install Dependencies
+          filters:
+            branches:
+              only: [main, staging]
+      - deploy:
+          name: Deploy to Staging
+          requires:
+            - Build Frontend
+          context: MEDICASSIST_STAGING
+          filters:
+            branches:
+              only: [staging]
+      - deploy:
+          name: Deploy to Live
+          requires:
+            - Build Frontend
+          context: MEDICASSIST_PROD
+          filters:
+            branches:
+              only: [main]
