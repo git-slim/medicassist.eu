@@ -11,6 +11,7 @@
 @import './utilities/glow-text.css';
 @import './components/ce.css' layer(components);
 @import './components/rte.css' layer(components);
+@import './components/animate.css' layer(components);
 
 @layer base {
 	* {

@@ -2,7 +2,54 @@ import '@fontsource-variable/manrope';
 import '../css/main.css';
 import 'lenis/dist/lenis.css';
 import Lenis from 'lenis';
-import { animate, attrEffect, mapValue, motionValue, svgEffect, transformValue } from 'motion';
+import { animate, inView, mapValue, motionValue, stagger, svgEffect, transformValue } from 'motion';
+import Splitting from 'splitting';
+
+setTimeout(() => {
+	const results = Splitting();
+	results.forEach(result => {
+		const el = result.el as HTMLElement;
+		const textContent = el.textContent || '';
+		el.ariaLabel = textContent;
+
+		const isInsideAnimateEl = el.closest('[data-animate]');
+		if (isInsideAnimateEl) return;
+
+		inView(
+			el,
+			() => {
+				el.style.visibility = 'visible';
+				if (result.words) {
+					animate(
+						result.words,
+						{ opacity: [0, 1], y: ['10px', '0px'], filter: ['blur(4px)', 'blur(0px)'] },
+						{ delay: stagger(0.03), type: 'spring', duration: 0.5 }
+					);
+				}
+			},
+			{ margin: '-50px 0px -50px 0px' }
+		);
+	});
+
+	const animateEls = document.querySelectorAll<HTMLElement>('[data-animate]');
+	animateEls.forEach(el => {
+		const animationType = el.dataset.animate;
+		inView(
+			el,
+			() => {
+				el.style.visibility = 'visible';
+				if (animationType === 'fade-up') {
+					animate(
+						el,
+						{ opacity: [0, 1], y: ['10px', '0px'], filter: ['blur(4px)', 'blur(0px)'] },
+						{ type: 'spring', duration: 0.5 }
+					);
+				}
+			},
+			{ margin: '-50px 0px -50px 0px' }
+		);
+	});
+}, 1000);
 
 export const lenis = new Lenis({
 	autoRaf: true,
@@ -66,9 +113,6 @@ export const lenis = new Lenis({
 	svgEffect(shimmerGradient, {
 		gradientTransform,
 	});
-	// x.on('change', latest => {
-	// 	console.log({ latest });
-	// });
 
 	setTimeout(() => {
 		animate(
@@ -85,7 +129,7 @@ export const lenis = new Lenis({
 			}
 		);
 		animate(x, [0, 1], { duration: 2, type: 'spring', delay: 1 });
-	}, 2000);
+	}, 1000);
 
 	let boundingRef: DOMRect | null = null;
 

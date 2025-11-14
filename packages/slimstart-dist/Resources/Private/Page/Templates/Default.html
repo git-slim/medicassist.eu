@@ -27,10 +27,10 @@
                             </div> -->
                         </div>
                     </div>
-                    <div class="home-grid-right lg:min-h-screen flex flex-col justify-center items-start gap-6 lg:gap-11 not-lg:-order-1 not-lg:mt-40">
+                    <div data-animate="fade-up" class="home-grid-right lg:min-h-screen flex flex-col justify-center items-start gap-6 lg:gap-11 not-lg:-order-1 not-lg:mt-40">
                         <p class="text-lg md:text-xl">Einfach Leben retten.</p>
                         <h1 class="flex flex-col gap-2">
-                            <span class="text-h2 md:text-[60px]">Rundum sorglos</span>
+                            <span class="text-h2 md:text-[60px]">Rundum sorglos </span>
                             <span class="text-[70px] md:text-h1">RAEDY.</span>
                         </h1>
                         <p class="text-lg md:text-xl">Immer. Einfach. Einsatzbereit.</p>
@@ -87,8 +87,8 @@
                     </div>
 
                     <div class="ce home-grid-right">
-                        <h2 class="mb-8">Mehr als ein Gerät: Eine Komplettlösung</h2>
-                        <p>
+                        <h2 class="mb-8" data-splitting>Mehr als ein Gerät: Eine Komplettlösung</h2>
+                        <p data-animate="fade-up">
                             Alles passt perfekt zusammen: sichere Aufbewahrung, permanente Überwachung, Verbindung zum Notruf. So funktioniert AED heute – einfach, sicher, wirksam, RAEDY.
                         </p>
                         <ui:button class="mt-8">Jetzt bestellen</ui:button>
@@ -122,8 +122,8 @@
                     }" />
 
                     <div class="ce home-grid-right">
-                        <h2 class="mb-8">Lorem ipsum dolor sit amet estarium amet.</h2>
-                        <p>
+                        <h2 class="mb-8" data-splitting>Lorem ipsum dolor sit amet estarium amet.</h2>
+                        <p data-animate="fade-up">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet sit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet sit.
                         </p>
                         <div class="flex flex-col gap-38 mt-16">
@@ -134,19 +134,19 @@
                                     icon="{feature.icon}" />
                             </f:for>
                         </div>
-                        <ui:checkmark.show offset="{0: 'start 5%', 1: 'start 5%'}" />
+                        <ui:checkmark.show offset="{0: 'start 10%', 1: 'start 10%'}" />
                         <div class="lg:h-[80vh]"></div>
                     </div>
 
-                    <ui:checkmark.hide class="home-grid-full" offset="{0: 'end 70%', 1: 'end 70%'}" />
-                    <div id="hide-check-icons" class="home-grid-full" data-offset="{f:format.json(value: {0: 'end 70%', 1: 'end 70%'})}"></div>
+                    <ui:checkmark.hide class="home-grid-full" offset="{0: 'end 50%', 1: 'end 50%'}" />
+                    <div id="hide-check-icons" class="home-grid-full" data-offset="{f:format.json(value: {0: 'end 50%', 1: 'end 50%'})}"></div>
 
                     <div class="ce home-grid-full ce-spacing-top-md">
                         <ui:homeVideos.root />
                     </div>
                 </div>
             </div>
-            <div class="full-width bg-background">
+            <div class="full-width">
                 <div class="ce ce-spacing-top-md content-grid">
                     <ui:testimonials />
                 </div>

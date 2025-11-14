@@ -1,0 +1,11 @@
+[data-splitting] {
+	visibility: hidden;
+	.char,
+	.word {
+		display: inline-block;
+	}
+}
+
+[data-animate] {
+	visibility: hidden;
+}
