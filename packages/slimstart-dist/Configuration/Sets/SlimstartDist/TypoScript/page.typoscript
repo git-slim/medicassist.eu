@@ -7,6 +7,11 @@ page {
                 as = mainNav
                 levels = 2
             }
+            40 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+            40 {
+                languages = auto
+                as = langNav
+            }
         }
 
         settings < plugin.tx_slimstart_dist.settings
