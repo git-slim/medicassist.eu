@@ -12,6 +12,13 @@ page {
                 languages = auto
                 as = langNav
             }
+            50 = menu
+            50  {
+                as = footerNav
+                levels = 1
+                special = directory
+                special.value = 12
+            }
         }
 
         settings < plugin.tx_slimstart_dist.settings

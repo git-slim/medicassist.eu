@@ -28,14 +28,13 @@
     </div>
     <div class="py-8 content-grid">
         <div class="breakout flex gap-10 items-center justify-between not-lg:flex-col-reverse">
-            <p class="not-lg:text-center">© 2025 medic assist GmbH . Alle Rechte vorbehalten</p>
+            <p class="not-lg:text-center">© <f:format.date format="Y">now</f:format.date> medic assist GmbH . Alle Rechte vorbehalten</p>
             <ul class="flex gap-3 flex-wrap">
-                <li>
-                    <f:link.typolink parameter="1">Impressum</f:link.typolink>
-                </li>
-                <li>
-                    <f:link.typolink parameter="1">Datenschutz</f:link.typolink>
-                </li>
+                <f:for each="{footerNav}" as="item" iteration="i">
+                    <li>
+                        <a href="{item.link}">{item.title}</a>
+                    </li>
+                </f:for>
             </ul>
         </div>
     </div>
